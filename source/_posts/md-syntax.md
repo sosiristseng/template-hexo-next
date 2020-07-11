@@ -386,7 +386,7 @@ pdf:
 
 {% note default %}
 ```markdown
-{% pdf http://www.africau.edu/images/default/sample.pdf 700px }
+{% pdf http://www.africau.edu/images/default/sample.pdf 700px %}
 ```
 {% endnote %}
 
