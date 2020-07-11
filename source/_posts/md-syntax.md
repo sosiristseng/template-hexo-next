@@ -2,12 +2,12 @@
 title: Markdown syntax 
 date: 2020-06-29 16:47:33
 tags: ["markdown"]
-categories: "Hexo"
+categories: ["Hexo"]
 ---
 
 This page showcases the Markdown syntax and extensions by tag plugins available to Hexo Next theme. 
 
-Some are taken from Grav[^grav], Hugo LoveIt theme[^loveitbasic], Hexo, and the Next theme documentation[^hexonext].
+Some are taken from [Grav](http://learn.getgrav.org/content/markdown), [Hugo LoveIt theme](https://hugoloveit.com/basic-markdown-syntax/), Hexo, and the Next theme [documentation](https://theme-next.js.org)
 
 <!-- more -->
 
@@ -317,6 +317,18 @@ This is a footnote with "label"[^label]
 [^1]: This is a digital footnote
 [^label]: This is a footnote with "label"
 
+## Keyboard strokes
+
+[markdown-it-kbd](https://www.npmjs.com/package/markdown-it-kbd) is needed.
+
+{% note default %}
+```markdown
+[[Ctrl]] + [[Alt]] + [[Delete]]
+```
+{% endnote %}
+
+[[Ctrl]] + [[Alt]] + [[Delete]]
+
 ## Emojis
 
 See {% post_link emoji "this post" %} 
@@ -335,11 +347,13 @@ See {% post_link emoji "this post" %}
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Alt text](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
-It's simplier to use absolute path of images. One could attach images or documents to GitHub issues for free hosting.
+It's simplier to use absolute paths than relative ones in Hexo. 
+
+You could [attach](https://docs.github.com/en/github/managing-your-work-on-github/file-attachments-on-issues-and-pull-requests) images or documents to GitHub issues for free hosting.
 
 ## Videos
 
-### With URL
+### URL
 
 {% note default %}
 ```markdown
@@ -351,7 +365,7 @@ It's simplier to use absolute path of images. One could attach images or documen
 
 {% video https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Physicsworks.ogv/Physicsworks.ogv.240p.vp9.webm %}
 
-### YouTube
+### YouTube videos
 
 {% note default %}
 ```markdown
@@ -373,7 +387,7 @@ It's simplier to use absolute path of images. One could attach images or documen
 
 ## PDF files
 
-See [Next theme docs](https://theme-next.js.org/docs/tag-plugins/pdf.html). 
+[Next theme docs: PDF](https://theme-next.js.org/docs/tag-plugins/pdf.html). 
 
 {% note default %}
 In `next.yml`
@@ -393,7 +407,8 @@ pdf:
 {% pdf http://www.africau.edu/images/default/sample.pdf 700px %}
 
 {% note warning %}
-Only browsers that supports PDF embedding are supported.
+1. Only browsers supporting PDF embedding are supported.
+2. PDF file loading may be block by [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) policy.
 {% endnote %}
 
 ## Documents iframe
@@ -417,9 +432,26 @@ For example,
 
 ## Note
 
-[Next theme docs docs](https://theme-next.js.org/docs/tag-plugins/note.html). Similar to [admonition](https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition) in Hugo LoveIt.
+[Next theme: Notes](https://theme-next.js.org/docs/tag-plugins/note.html). 
 
-Check your settings about `note` in `next.yml`.
+Similar to [admonition](https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition) in Hugo LoveIt.
+
+Related settings in `next.yml`.
+
+```yml
+# Note tag (bs-callout)
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: simple
+  icons: true
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: 0
+```
 
 {% note default %}
 
@@ -553,7 +585,7 @@ code block in note tag
 
 ## Tabs
 
-[Tag plugin docs](https://theme-next.js.org/docs/tag-plugins/tabs.html)
+[Hexo Next: Tags](https://theme-next.js.org/docs/tag-plugins/tabs.html)
 
 {% note default %}
 ```markdown
@@ -591,7 +623,7 @@ Define a tab via `<!-- tab title @icon --> ... <!-- endtab -->`. Both `title` an
 
 ## Label
 
-[Hexo Next Docs](https://theme-next.js.org/docs/tag-plugins/label.html)
+[Hexo Next: Labels](https://theme-next.js.org/docs/tag-plugins/label.html)
 
 {% note default %}
 
@@ -612,7 +644,7 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 
 ## Button
 
-[Hexo Next Docs](https://theme-next.js.org/docs/tag-plugins/button.html)
+[Hexo Next: Buttons](https://theme-next.js.org/docs/tag-plugins/button.html)
 
 {% note default %}
 ```markdown
@@ -640,7 +672,7 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 
 ## Link Grid
 
-[Hexo Next Docs](https://theme-next.js.org/docs/tag-plugins/link-grid.html)
+[Hexo Next: Link grid](https://theme-next.js.org/docs/tag-plugins/link-grid.html)
 
 {% note default %}
 ```markdown
@@ -664,12 +696,8 @@ Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/appl
 
 ## MathJax rendering
 
-See {% post_path md-math "math rendering" %} 
+See {% post_link md-math "math rendering" %} 
 
 ## Others
 
 * [Group Pictures](https://theme-next.js.org/docs/tag-plugins/group-pictures.html)
-
-[^grav]: <http://learn.getgrav.org/content/markdown>
-[^loveitbasic]: <https://hugoloveit.com/basic-markdown-syntax/>
-[^hexonext]: <https://theme-next.js.org>

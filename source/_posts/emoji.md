@@ -9,9 +9,11 @@ This post showed how to render [emoji](https://github.com/ikatyang/emoji-cheat-s
 
 <!-- more -->
 
-## Go with the default Markdown renderer in Hexo
+## Choice of render
 
-You'll need `hexo-filter-emoji` as the default Hexo Markdown renderer (`hexo-renderer-marked`) does not natively support emojis.
+### The default one (`hexo-renderer-marked`) or `hexo-renderer-pandoc`
+
+Installl `hexo-filter-emoji` 
 
 ```bash
 npm i hexo-filter-emoji
@@ -25,7 +27,7 @@ npm i hexo-filter-emoji
 {% emoji sparkles %}
 ```
 
-## Go with an alternative renderer `hexo-renderer-markdown-it`
+### If using `hexo-renderer-markdown-it`
 
 Install both `hexo-renderer-markdown-it` and `markdown-it-emoji`
 
@@ -34,6 +36,6 @@ npm un hexo-renderer-marked
 npm i markdown-it-emoji hexo-renderer-markdown-it
 ```
 
-## Table of emoji
+## List of Github emojis
 
-{% gist rxaviers/7360908 %}
+[Emoji cheet sheet](https://zanjs.com/emoji/public/)

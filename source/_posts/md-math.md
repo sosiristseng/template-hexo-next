@@ -5,7 +5,7 @@ tags: ["latex", "mathjax", "katex"]
 categories: ["Hexo"]
 ---
 
-You'll need to swap out the default Markdown renderer (`hexo-renderer-marked`) for Latex rendering without workaround escape charactors such as `\`, `_`.
+To render math without escaping `\` or `_`, you'll need to replace the default Markdown renderer (`hexo-renderer-marked`).
 
 <!-- more -->
 
@@ -31,7 +31,7 @@ npm un hexo-renderer-marked
 
 You could use `markdown-it-katex` with `hexo-renderer-markdown-it` as in the [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html).
 
-However, I recommend another plugin, `markdown-it-latex2img`[^makergyt], which does server-side rendering of math formulae, powered by <https://math.now.sh/>
+However, I recommend another plugin, `markdown-it-latex2img`[:octocat:](https://github.com/MakerGYT/markdown-it-latex2img), which does server-side rendering of math formulae, powered by <https://math.now.sh/>
 
 ## MathJax rendering
 
@@ -47,7 +47,7 @@ The left `$` must be followed by a non white-space character. And the right `$` 
 - Sum of arithmetic sequence: $S_{n}=n a_{1}+\frac{n(n-1)}{2} d, n \in N^{*}$
 - Fundamental theorem of calculus: $\int_{a}^{b} f(x) d x=F(b)-F(a)=\left.F(x)\right|_{a} ^{b}$
 - Binomial distribution: $P_{n}(k)=C_{n}^{k} p^{k} q^{n-k} \quad k=0,1,2 \ldots \ldots, n$
-- 
+
 ### Block formulae
 
 Normaldistribution $X \sim N(\mu,\sigma^2)$:
