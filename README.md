@@ -1,6 +1,6 @@
 # Site template for Hexo Next
 
-![Page Deploy](https://img.shields.io/github/workflow/status/sosiristseng/site-hexo-next/Page%20Deploy/source?style=flat-square)
+![Page Deploy](https://github.com/sosiristseng/site-hexo-next/workflows/Page%20Deploy/badge.svg)
 
 Site template powered by [Hexo Next](https://theme-next.js.org/) and [GitHub pages](https://pages.github.com/).
 
