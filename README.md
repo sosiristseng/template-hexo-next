@@ -20,7 +20,8 @@ Site template powered by [Hexo Next](https://theme-next.js.org/) and [GitHub pag
 - Listed JS package dependencies in `package.json`
 - GitHub actions for deploy the HTML pages to `master` branch from `source` (default) branch
 
-## How to Download the Latest Release Version of Next theme
+## Tips
+### How to Download the Latest Release Version of Next theme
 
 In your blog site folder:
 
@@ -29,3 +30,6 @@ rm -rf themes/next
 mkdir themes/next
 curl -s https://api.github.com/repos/next-theme/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
 ```
+
+## See also
+* Create a Acedemic site powerered by Hugo static site generator, the academic theme, and Netlify: https://sourcethemes.com/academic/docs/install/
