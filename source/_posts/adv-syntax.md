@@ -5,39 +5,46 @@ tags: ["markdown"]
 categories: ["Hexo"]
 ---
 
-This post shows tag plugins available to Hexo Next theme. Take from the Next theme [documentation](https://theme-next.js.org)
+This post shows tag plugins, an extension of Markdown syntax, available to Hexo static site generator and the Next theme [documentation](https://theme-next.js.org)
 
 <!-- more -->
+
+The following sections will be
+
+📄: source documentation
+
+```markdown
+What you write in Markdown
+```
+
+What would be rendered
+
 
 ## Quotes
 
 ### Centered Quote
 
-From [Hexo Next](https://theme-next.js.org/docs/tag-plugins/#Centered-Quote)
+[📄](https://theme-next.js.org/docs/tag-plugins/#Centered-Quote)
 
-{% note default %}
 ```markdown
 {% centerquote %}Something{% endcenterquote %}
 <!-- Or in short -->
 {% cq %}Something{% endcq %}
 ```
-{% endnote %}
 
 {% cq %}Elegant in code, simple in core{% endcq %}
 
 ### Pull Quote
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Pull-Quote)
+[📄](https://hexo.io/docs/tag-plugins.html#Pull-Quote)
 
-Rendered the as the regular markdown quote.
+Similar to the regular markdown quote.
 
-{% note default %}
 ```markdown
 {% pullquote %}
 content
 {% endpullquote %}
 ```
-{% endnote %}
 
 {% pullquote %}
 content
@@ -45,15 +52,15 @@ content
 
 ### Block Quote
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Block-Quote)
+[📄](https://hexo.io/docs/tag-plugins.html#Block-Quote)
 
-{% note default %}
+With author and book title.
+
 ```markdown
 {% blockquote David Levithan, Wide Awake %}
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}
 ```
-{% endnote %}
 
 {% blockquote David Levithan, Wide Awake %}
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
@@ -63,7 +70,7 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 
 ### Hexo tag plugin
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Code-Block)
+[📄](https://hexo.io/docs/tag-plugins.html#Code-Block)
 
 {% note default %}
 ```markdown
@@ -71,6 +78,7 @@ From [Hexo](https://hexo.io/docs/tag-plugins.html#Code-Block)
 code snippet
 {% endcodeblock %}
 ```
+{% endnote %}
 
 ```markdown
 {% codeblock _.compact lang:javascript http://underscorejs.org/#compact Underscore.js %}
@@ -78,7 +86,6 @@ _.compact([0, 1, false, 2, '', 3]);
 => [1, 2, 3]
 {% endcodeblock %}
 ```
-{% endnote %}
 
 {% codeblock _.compact lang:javascript http://underscorejs.org/#compact Underscore.js %}
 _.compact([0, 1, false, 2, '', 3]);
@@ -87,65 +94,59 @@ _.compact([0, 1, false, 2, '', 3]);
 
 ### Github gist
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Gist)
+[📄](https://hexo.io/docs/tag-plugins.html#Gist)
 
-{% note default %}
 ```markdown
 {% gist sosiristseng/5406c151b54ed182bf8e57e1a2a4c57e %}
 ```
-{% endnote %}
 
 {% gist sosiristseng/5406c151b54ed182bf8e57e1a2a4c57e %}
 
 ### Include code
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Include-Code)
-
-The directory containing code is defined at `code_dir` option in `_config.yml`, default to `downloads/code`, corresponding to `source/downloads/code`
+[📄](https://hexo.io/docs/tag-plugins.html#Include-Code). The directory containing code is defined at `code_dir` option in `_config.yml`, default to `downloads/code`, corresponding to `source/downloads/code`
 
 {% note default %}
 ```markdown
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
+{% endnote %}
 
 ```markdown
 {% include_code lang:bash bootstrap-conda.sh %}
 ```
-{% endnote %}
 
 {% include_code lang:bash bootstrap-conda.sh %}
 
 ## Link to other post
 
-From [Hexo](https://hexo.io/docs/tag-plugins#Include-Posts).
+[📄](https://hexo.io/docs/tag-plugins#Include-Posts).
 
 {% note default %}
 ```markdown
 {% post_link filename [title] [escape]  %}
 ```
+{% endnote %}
 
 ```markdown
 {% post_link emoji "Emoji support" %}
 ```
-{% endnote %}
 
-{% post_link emoji %}
+{% post_link emoji "Emoji support" %}
 
 ## Image
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Image)
+[📄](https://hexo.io/docs/tag-plugins.html#Image)
 
 {% note default %}
-
 ```markdown
 {% img [class names] /path/to/image [width] [height] '"title text" "alt text"' %}
 ```
+{% endnote %}
 
 ```markdown
 {% img https://octodex.github.com/images/stormtroopocat.jpg 200 200 '"The Stormtroopocat" "Alt text"' %}
 ```
-
-{% endnote %}
 
 {% img https://octodex.github.com/images/stormtroopocat.jpg 200 200 '"The Stormtroopocat" "Alt text"' %}
 
@@ -153,62 +154,60 @@ From [Hexo](https://hexo.io/docs/tag-plugins.html#Image)
 
 ### URL
 
-From [Hexo Next](https://theme-next.js.org/docs/tag-plugins/video.html)
+[📄](https://theme-next.js.org/docs/tag-plugins/video.html)
 
-{% note default %}
 ```markdown
-{% video url %}
-
 {% video https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Physicsworks.ogv/Physicsworks.ogv.240p.vp9.webm %}
 ```
-{% endnote %}
 
 {% video https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Physicsworks.ogv/Physicsworks.ogv.240p.vp9.webm %}
 
 ### YouTube videos
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#YouTube)
+[📄](https://hexo.io/docs/tag-plugins.html#YouTube)
 
-{% note default %}
 ```markdown
 {% youtube JtUAAXe_0VI %}
 ```
-{% endnote %}
 
 {% youtube JtUAAXe_0VI %}
 
 ### Vimeo
 
-From [Hexo](https://hexo.io/docs/tag-plugins.html#Vimeo)
+[📄](https://hexo.io/docs/tag-plugins.html#Vimeo)
 
-{% note default %}
 ```markdown
 {% vimeo 63830488 %}
 ```
-{% endnote %}
 
 {% vimeo 63830488 %}
 
 ## PDF files
 
-From [Hexo Next](https://theme-next.js.org/docs/tag-plugins/pdf.html). 
+[📄](https://theme-next.js.org/docs/tag-plugins/pdf.html)
 
 {% note default %}
-In `next.yml`
+
+`next/_config.yml`
+
 ```yaml
 pdf:
   enable: true
   height: 500px  # Default height
 ```
-{% endnote %}
 
-{% note default %}
 ```markdown
-{% pdf http://www.africau.edu/images/default/sample.pdf 700px %}
+{% pdf url [height] %}
 ```
 {% endnote %}
 
-{% pdf http://www.africau.edu/images/default/sample.pdf 700px %}
+```markdown
+{% pdf /pdf/sample.pdf 700px %}
+```
+
+{% pdf /pdf/sample.pdf 700px %}
+
+pdf files are placed in `source/pdf/` folder in this case.
 
 {% note warning %}
 1. Only browsers supporting PDF embedding are supported.
@@ -217,7 +216,7 @@ pdf:
 
 ## Documents iframe
 
-From [Hexo:iframe](https://hexo.io/zh-tw/docs/tag-plugins.html#iframe)
+[📄](https://hexo.io/zh-tw/docs/tag-plugins.html#iframe)
 
 View your documents inline by [embedding](https://gist.github.com/tzmartin/1cf85dc3d975f94cfddc04bc0dd399be) the Google Docs Viewer into `iframe`.
 
@@ -228,7 +227,6 @@ View your documents inline by [embedding](https://gist.github.com/tzmartin/1cf85
 {% endnote %}
 
 
-For example, 
 ```markdown
 {% iframe "https://docs.google.com/viewer?url=https://gitlab.com/sosiristseng/sosiristseng.gitlab.io/uploads/55f69d2020662c7900269c2c9c4f6a40/file_example_PPT_250kB.ppt&embedded=true" %}
 ```
@@ -237,13 +235,9 @@ For example,
 
 ## Note
 
-From [Hexo Next](https://theme-next.js.org/docs/tag-plugins/note.html). 
+[📄](https://theme-next.js.org/docs/tag-plugins/note.html). Similar to [admonitions](https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition).
 
-Similar to [admonition](https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition) in Hugo LoveIt.
-
-Related settings in `next.yml`.
-
-```yml
+```yml next/_config.yml
 # Note tag (bs-callout)
 note:
   # Note tag style values:
@@ -257,8 +251,6 @@ note:
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
 ```
-
-{% note default %}
 
 ```markdown
 {% note %}
@@ -324,7 +316,6 @@ code block in note tag
 {% endnote %}
 
 ```
-{% endnote %}
 
 {% note %}
 ### Header
@@ -390,7 +381,7 @@ code block in note tag
 
 ## Tabs
 
-[Hexo Next: Tabs](https://theme-next.js.org/docs/tag-plugins/tabs.html)
+[📄](https://theme-next.js.org/docs/tag-plugins/tabs.html)
 
 {% note default %}
 ```markdown
@@ -428,9 +419,7 @@ Define a tab via `<!-- tab title @icon --> ... <!-- endtab -->`. Both `title` an
 
 ## Label
 
-[Hexo Next: Labels](https://theme-next.js.org/docs/tag-plugins/label.html)
-
-{% note default %}
+[📄](https://theme-next.js.org/docs/tag-plugins/label.html)
 
 ```markdown
 Lorem {% label @ipsum %} {% label primary@dolor sit %} amet, consectetur {% label success@adipiscing elit, %} sed {% label info@do eiusmod %} tempor incididunt ut labore et dolore magna aliqua.
@@ -439,7 +428,6 @@ Ut enim *{% label warning @ad %}* minim veniam, quis **{% label danger@nostrud %
 
 Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}~~ <mark>esse</mark> cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
-{% endnote %}
 
 Lorem {% label @ipsum %} {% label primary@dolor sit %} amet, consectetur {% label success@adipiscing elit, %} sed {% label info@do eiusmod %} tempor incididunt ut labore et dolore magna aliqua.
 
@@ -449,9 +437,8 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 
 ## Button
 
-[Hexo Next: Buttons](https://theme-next.js.org/docs/tag-plugins/button.html)
+[📄](https://theme-next.js.org/docs/tag-plugins/button.html)
 
-{% note default %}
 ```markdown
 {% btn #, Text %}{% btn #, Text & Title,, Title %}
 
@@ -463,8 +450,6 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 {% btn #, Text & Icon (fixed width), home fa-fw %}</p>
 
 ```
-{% endnote %}
-
 
 {% btn #, Text %}{% btn #, Text & Title,, Title %}
 
@@ -477,26 +462,24 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 
 ## Link Grid
 
-[Hexo Next: Link grid](https://theme-next.js.org/docs/tag-plugins/link-grid.html)
+[📄](https://theme-next.js.org/docs/tag-plugins/link-grid.html)
 
-{% note default %}
 ```markdown
 {% linkgrid %}
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
 {% endlinkgrid %}
 ```
-{% endnote %}
 
 {% linkgrid %}
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
-% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
 {% endlinkgrid %}
 
 

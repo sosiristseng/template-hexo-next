@@ -13,7 +13,7 @@ To render math without escaping `\` or `_`, you might want to replace the defaul
 
 Some of the guide is from [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html)
 
-Uninstall the default Markdown renderer (`hexo-renderer-marked`) first since it treats `\` and `_` character with Markdown syntax.
+Uninstall the default Markdown renderer (`hexo-renderer-marked`) since it treats `\` and `_` character with Markdown syntax.
 
 ```bash
 npm un hexo-renderer-marked
@@ -29,17 +29,15 @@ npm i hexo-renderer-pandoc
 
 ### Option 2: `hexo-renderer-markdown-it`
 
-You could use `markdown-it-katex` with `hexo-renderer-markdown-it` as stated in the [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html).
+Install `markdown-it-katex` with `hexo-renderer-markdown-it` as stated [here 📄](https://theme-next.js.org/docs/third-party-services/math-equations.html).
 
-However, I recommend another plugin, `markdown-it-latex2img`[(repo)](https://github.com/MakerGYT/markdown-it-latex2img), which does server-side rendering of math formulae, powered by <https://math.now.sh/>
+However, I would suggest another plugin, `markdown-it-latex2img`[📦](https://github.com/MakerGYT/markdown-it-latex2img), which does server-side rendering of math formulae, powered by <https://math.now.sh/>
 
 ```bash
 npm i hexo-renderer-markdown-it markdown-it-latex2img
 ```
 
-Activate the plugin in `_config.yml`
-
-```yml
+```yml _config.yml
 # _config.yml
 markdown:
   plugins:
@@ -49,15 +47,11 @@ markdown:
 
 ## MathJax rendering
 
-See [MathJax quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) for syntax.
+For syntax, see [MathJax quick reference 📄](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
 
 The delimiters `$`, `$$` rendering follows `pandoc` [rule](https://docs.mathjax.org/en/latest/basic/mathematics.html#tex-and-latex-input).
 
->The default math delimiters are $$...$$ and [...] for displayed mathematics, and (...) for in-line mathematics.Note in particular that the $...$ in-line delimiters are not used by default.That is because dollar signs appear too often in non-mathematical settings, which could cause some text to be treated as mathematics unexpectedly.
-
 ### Inline math
-
-The left `$` must be followed by a non white-space character. And the right `$` must follow  a non white-space character
 
 - Pythagoras theorem: $a^2+b^2=c^2$
 - Sum of arithmetic sequence: $S_{n}=n a_{1}+\frac{n(n-1)}{2} d, n \in N^{*}$
@@ -73,6 +67,7 @@ Fibonacci Sequence $A_n=A_{n-1}+A_{n-2}$, the ratio of two consecutive numbers c
 $$\lim_{n\to \infty}\frac{A_{n-1}}{A_n}=\frac{\sqrt{5}-1}{2}.$$
 
 Factorisation
+
 $$\begin{split}(x−1)(x−3)&=x^2−4x+3 \\ 
 &=x^2−4x+4−1 \\ 
 &=(x−2)^2−1

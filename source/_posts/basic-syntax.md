@@ -7,13 +7,24 @@ categories: ["Hexo"]
 
 This post showcases the basic Markdown syntax you'll see in major Markdown editors.
 
+<!-- more -->
+
 Some are taken from [Grav](http://learn.getgrav.org/content/markdown), [Hugo LoveIt theme](https://hugoloveit.com/basic-markdown-syntax/) documentation.
 
-<!-- more -->
+The following sections will be
+
+📄: documentation
+💡: tips
+🔨: tool
+
+```markdown
+What you write in Markdown
+```
+
+What would be rendered
 
 ## Headings
 
-{% note default %}
 ```markdown
 ## h2 Heading
 ### h3 Heading
@@ -21,7 +32,6 @@ Some are taken from [Grav](http://learn.getgrav.org/content/markdown), [Hugo Lov
 ##### h5 Heading
 ###### h6 Heading
 ```
-{% endnote %}
 
 ## h2 Heading
 ### h3 Heading
@@ -31,9 +41,8 @@ Some are taken from [Grav](http://learn.getgrav.org/content/markdown), [Hugo Lov
 
 ## Inline HTML
 
-You can simply use HTML If you need a certain HTML tag or html comments.
+HTML tags are supported if you need a particular HTML tag or html comments.
 
-{% note default %}
 ```html
 Paragraph in Markdown.
 
@@ -46,10 +55,7 @@ Paragraph in Markdown.
 <!--
 This is a comment, you should not see me
 -->
-
 ```
-{% endnote %}
-
 
 Paragraph in Markdown.
 
@@ -65,11 +71,9 @@ This is a comment, you should not see me
 
 ## Horizontal Rules
 
-{% note default %}
 ```markdown
 ---
 ```
-{% endnote %}
 
 ---
 
@@ -77,7 +81,7 @@ This is a comment, you should not see me
 
 Bold, italics, and strikethrough can be used either indivisually or in combination.
 
-{% note default %}
+
 ```markdown
 **rendered as bold text**
 
@@ -89,7 +93,7 @@ _rendered as italicized text_
 
 ~~Strike through this text~~
 ```
-{% endnote %}
+
 
 **rendered as bold text**
 
@@ -103,15 +107,13 @@ _rendered as italicized text_
 
 ## Blockquotes
 
-{% note default %}
+
 ```markdown
 > **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
 
 > One
 > Two
 ```
-{% endnote %}
-
 
 > **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
 
@@ -124,7 +126,6 @@ Multiline quotes
 
 ### Unordered
 
-{% note default %}
 ```markdown
 * Lorem ipsum dolor sit amet
 * Consectetur adipiscing elit
@@ -139,7 +140,7 @@ Multiline quotes
 * Aenean sit amet erat nunc
 * Eget porttitor lorem
 ```
-{% endnote %}
+
 
 * Lorem ipsum dolor sit amet
 * Consectetur adipiscing elit
@@ -158,7 +159,6 @@ Multiline quotes
 
 :bulb: If you just use 1. for each number, Markdown will automatically number each item.
 
-{% note default %}
 ```markdown
 1. Lorem ipsum dolor sit amet
 1. Consectetur adipiscing elit
@@ -169,7 +169,6 @@ Multiline quotes
 1. Aenean sit amet erat nunc
 1. Eget porttitor lorem
 ```
-{% endnote %}
 
 1. Lorem ipsum dolor sit amet
 1. Consectetur adipiscing elit
@@ -182,14 +181,31 @@ Multiline quotes
 
 ## Markdown Code blocks 
 
-* Inline code: `` `code here` ``.
-* Block fenced code start with `` ```type `` and end with `` ``` ``. Syntax highlighting is enabled.
+Inline monospace
+
+```markdown
+`code here`
+```
+
+`code here`
+
+Block fenced code, with syntax highlighting
+
+``````markdown
+```python
+print("Hey!")
+```
+``````
+
+```python
+print("Hey!")
+```
 
 ## Tables
 
-:bulb: See [tables generator](https://www.tablesgenerator.com/markdown_tables) for easier inserting tables to your Markdown document.
+:bulb: See [tables generator 🔨](https://www.tablesgenerator.com/markdown_tables) for syntax.
 
-{% note default %}
+
 ```markdown
 | Option | Description |
 | ------ | ----------- |
@@ -197,7 +213,6 @@ Multiline quotes
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 ```
-{% endnote %}
 
 | Option | Description |
 | ------ | ----------- |
@@ -208,14 +223,12 @@ Multiline quotes
 
 ## Links
 
-{% note default %}
 ```makrdown
 <https://assemble.io>
 <contact@revolunet.com>
 [Assemble](https://assemble.io)
 [Upstage](https://github.com/upstage/ "Visit Upstage!")
 ```
-{% endnote %}
 
 <https://assemble.io>
 <contact@revolunet.com>
@@ -226,7 +239,6 @@ Multiline quotes
 
 :bulb: Footnotes are automatically numbered.
 
-{% note default %}
 ```markdown
 This is a digital footnote[^1].
 This is a footnote with "label"[^label]
@@ -234,7 +246,6 @@ This is a footnote with "label"[^label]
 [^1]: This is a digital footnote
 [^label]: This is a footnote with "label"
 ```
-{% endnote %}
 
 This is a digital footnote[^1]
 This is a footnote with "label"[^label]
@@ -246,23 +257,19 @@ This is a footnote with "label"[^label]
 
 [markdown-it-kbd](https://www.npmjs.com/package/markdown-it-kbd) is needed.
 
-{% note default %}
 ```markdown
 [[Ctrl]] + [[Alt]] + [[Delete]]
 ```
-{% endnote %}
 
 [[Ctrl]] + [[Alt]] + [[Delete]]
 
 
-## Images Markdown syntax
+## Images
 
-{% note default %}
 ```markdown
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Alt text](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 ```
-{% endnote %}
 
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Alt text](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
