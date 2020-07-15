@@ -5,15 +5,15 @@ tags: ["emoji", "markdown", "hexo-filter-emoji", "markdown-it-emoji"]
 categories: ["Hexo"]
 ---
 
-This post showed how to render [emoji](https://github.com/ikatyang/emoji-cheat-sheet) in Hexo sites.
+This post showed how to render [emoji](https://github.com/ikatyang/emoji-cheat-sheet) in Hexo sites 😀.
 
 <!-- more -->
 
 ## Choice of render
 
-### The default one (`hexo-renderer-marked`) or `hexo-renderer-pandoc`
+### `hexo-renderer-marked` (the default one) or `hexo-renderer-pandoc`
 
-Installl `hexo-filter-emoji` 
+Install `hexo-filter-emoji` 
 
 ```bash
 npm i hexo-filter-emoji
@@ -27,13 +27,19 @@ npm i hexo-filter-emoji
 {% emoji sparkles %}
 ```
 
-### If using `hexo-renderer-markdown-it`
+### `hexo-renderer-markdown-it`
 
 Install both `hexo-renderer-markdown-it` and `markdown-it-emoji`
 
 ```bash
 npm un hexo-renderer-marked
 npm i markdown-it-emoji hexo-renderer-markdown-it
+```
+
+**Usage**
+
+```markdown
+:sparkles:
 ```
 
 ## List of Github emojis
