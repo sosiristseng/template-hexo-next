@@ -5,7 +5,7 @@ tags: ["latex", "mathjax", "katex"]
 categories: ["Hexo"]
 ---
 
-To render math without escaping `\` or `_`, you'll need to replace the default Markdown renderer (`hexo-renderer-marked`).
+To render math without escaping `\` or `_`, you might want to replace the default Markdown renderer (`hexo-renderer-marked`).
 
 <!-- more -->
 
@@ -13,7 +13,7 @@ To render math without escaping `\` or `_`, you'll need to replace the default M
 
 Some of the guide is from [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html)
 
-First, uninstall the default Markdown renderer (`hexo-renderer-marked`)
+Uninstall the default Markdown renderer (`hexo-renderer-marked`) first since it treats `\` and `_` character with Markdown syntax.
 
 ```bash
 npm un hexo-renderer-marked
@@ -24,22 +24,38 @@ npm un hexo-renderer-marked
 `pandoc` need to be installed in your `PATH`.
 
 ```bash
-npm un hexo-renderer-marked
+npm i hexo-renderer-pandoc
 ```
 
 ### Option 2: `hexo-renderer-markdown-it`
 
-You could use `markdown-it-katex` with `hexo-renderer-markdown-it` as in the [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html).
+You could use `markdown-it-katex` with `hexo-renderer-markdown-it` as stated in the [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html).
 
-However, I recommend another plugin, `markdown-it-latex2img`[:octocat:](https://github.com/MakerGYT/markdown-it-latex2img), which does server-side rendering of math formulae, powered by <https://math.now.sh/>
+However, I recommend another plugin, `markdown-it-latex2img`[(repo)](https://github.com/MakerGYT/markdown-it-latex2img), which does server-side rendering of math formulae, powered by <https://math.now.sh/>
+
+```bash
+npm i hexo-renderer-markdown-it markdown-it-latex2img
+```
+
+Activate the plugin in `_config.yml`
+
+```yml
+# _config.yml
+markdown:
+  plugins:
+    - markdown-it-latex2img
+    - (other plugins...)
+```
 
 ## MathJax rendering
 
 See [MathJax quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) for syntax.
 
-The delimiters `$`, `$$` follow the pandoc rule.
+The delimiters `$`, `$$` rendering follows `pandoc` [rule](https://docs.mathjax.org/en/latest/basic/mathematics.html#tex-and-latex-input).
 
-### Inline formulae
+>The default math delimiters are $$...$$ and [...] for displayed mathematics, and (...) for in-line mathematics.Note in particular that the $...$ in-line delimiters are not used by default.That is because dollar signs appear too often in non-mathematical settings, which could cause some text to be treated as mathematics unexpectedly.
+
+### Inline math
 
 The left `$` must be followed by a non white-space character. And the right `$` must follow  a non white-space character
 
@@ -48,7 +64,7 @@ The left `$` must be followed by a non white-space character. And the right `$` 
 - Fundamental theorem of calculus: $\int_{a}^{b} f(x) d x=F(b)-F(a)=\left.F(x)\right|_{a} ^{b}$
 - Binomial distribution: $P_{n}(k)=C_{n}^{k} p^{k} q^{n-k} \quad k=0,1,2 \ldots \ldots, n$
 
-### Block formulae
+### Block math
 
 Normaldistribution $X \sim N(\mu,\sigma^2)$:
 $$f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
@@ -74,11 +90,13 @@ D(x)=
 $$
 
 Gauss's law
+
 $$
 \iiint_{\Omega}\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right) d v=\iint_{\Sigma} P d y d z+Q d z d x+R d x d y
 $$
 
 Vandermonde matrix
+
 $$D_{n-1}=\left|\begin{array}{cccc}
 1 & 1 & \dots & 1 \\
 x_{2} & x_{3} & \dots & x_{n} \\
@@ -96,6 +114,7 @@ a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n} &=b_{m}
 \end{aligned}\right.$$
 
 ### Physics
+
 - Newton's first law: $\sum \vec{F}_{i}=\frac{\mathrm{d} \vec{v}}{\mathrm{d} t}=0$
 - Newton's second law: $\vec{F}=\frac{\mathrm{d} m}{\mathrm{d} t} \vec{v}+m \frac{\mathrm{d} \vec{v}}{\mathrm{d} t}=\frac{\mathrm{d} m}{\mathrm{d} t} \vec{v}+m \vec{a}=\frac{\mathrm{d} m}{\mathrm{d} t} \vec{v}+m \frac{\mathrm{d}^{2} \vec{r}}{\mathrm{d} t^{2}}$
 - Newton's third law: $\overrightarrow{F_{12}}=-\overrightarrow{F_{21}}$
@@ -111,18 +130,21 @@ Second lawof thermodynamics
 $$d S \geq \frac{\delta Q}{T}$$
 
 ## Chemistry
+
 Ions and precipitation: $\ce{SO4^2- + Ba^2+ -> BaSO4 v}$
 
-Ammonia synthesis
+Ammonia synthesis (notice the arrow length is not adjustable in Mathjax)
 $$
-\ce{N2 + 3H2 <=>T[ heat , pressure][catalyst] 2NH3}
+\ce{N2 + 3H2 <=>T[ heat and pressure][catalyst] 2NH3}
 $$
 
 Equilibrium constant:$\mathrm{Zn}+2 \mathrm{HCl}(\mathrm{aq})=\mathrm{H}_{2}+\mathrm{ZnCl}_{2} \quad(\mathrm{aq})$
 $$K^{\theta}=\frac{\left[p\left(\mathrm{H}_{2}\right) / p^{\theta}\right]\left[c\left(\mathrm{ZnCl}_{2}\right)\right]}{c^{2}(\mathrm{HC})}$$
 
 ## Biology
+
 Photosynthesis
-$$\ce{CO2 + 2H2O ->T[Photons][enzymes] CH2O + H2O + O2}$$
+
+$$\ce{6CO2 + 6H2O ->T[Photons][enzymes] C6H12O6 + 6O2}$$
 
 [^makergyt]: https://github.com/MakerGYT/markdown-it-latex2img
