@@ -32,4 +32,8 @@ curl -s https://api.github.com/repos/next-theme/hexo-theme-next/releases/latest 
 ```
 
 ## See also
+### Hugo
 * Create a Acedemic site powerered by Hugo static site generator, the academic theme, and Netlify: https://sourcethemes.com/academic/docs/install/
+* Hugo website template with GitHub action and GitHub pages integration: https://github.com/sparsecode/hugo-template
+### Docsify
+* Template for GitHub pages: https://github.com/alertbox/gh-quickstart/
