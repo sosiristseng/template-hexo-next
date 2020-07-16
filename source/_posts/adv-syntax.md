@@ -202,10 +202,10 @@ pdf:
 {% endnote %}
 
 ```markdown
-{% pdf /pdf/sample.pdf 700px %}
+{% pdf pdf/sample.pdf 700px %}
 ```
 
-{% pdf /pdf/sample.pdf 700px %}
+{% pdf pdf/sample.pdf 700px %}
 
 pdf files are placed in `source/pdf/` folder in this case.
 
@@ -466,20 +466,20 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 
 ```markdown
 {% linkgrid %}
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
 {% endlinkgrid %}
 ```
 
 {% linkgrid %}
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
-% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
+% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | img/apple-touch-icon-next.png
 {% endlinkgrid %}
 
 

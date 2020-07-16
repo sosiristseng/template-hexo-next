@@ -723,7 +723,7 @@ theme_config:
   pdf:
     enable: true
     # Default height
-    height: 500px
+    height: 700px
 
   # Mermaid tag
   mermaid:
