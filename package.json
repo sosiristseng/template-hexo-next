@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo cl && hexo g",
     "clean": "hexo cl",
-    "deploy": "npm run build && hexo d",
+    "deploy": "hexo cl && hexo g && hexo d",
     "server": "hexo cl && hexo s -o --debug"
   },
   "hexo": {
@@ -23,6 +23,7 @@
     "hexo-renderer-markdown-it": "^4.1.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
+    "hexo-theme-next": "^8.0.0",
     "hexo-word-counter": "0.0.2",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-container": "^3.0.0",
