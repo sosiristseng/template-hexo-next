@@ -9,6 +9,9 @@
 # See: https://theme-next.js.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
+# Console reminder if new version released.
+reminder: false
+
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
   enable: true
@@ -37,10 +40,10 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 favicon:
-  small: ""
-  medium: ""
-  apple_touch_icon: ""
-  safari_pinned_tab: ""
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -49,7 +52,7 @@ language_switcher: false
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2020
 
   # Icon between year and copyright info.
   icon:
@@ -161,16 +164,16 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/user || fab fa-github
-  GitLab: https://gitlab.com/user || fab fa-gitlab
+  GitHub: https://github.com/# || fab fa-github
+  GitLab: https://gitlab.com/# || fab fa-gitlab
   E-Mail: mailto:user@mail.com || fa fa-envelope
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
-  Twitter: https://twitter.com/user || fab fa-twitter
-  FB Page: https://www.facebook.com/user || fab fa-facebook
-  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
-  #YouTube: https://youtube.com/yourname || fab fa-youtube
-  Instagram: https://instagram.com/user || fab fa-instagram
+  Weibo: https://weibo.com/# || fab fa-weibo
+  Google: https://plus.google.com/# || fab fa-google
+  Twitter: https://twitter.com/# || fab fa-twitter
+  FB Page: https://www.facebook.com/# || fab fa-facebook
+  StackOverflow: https://stackoverflow.com/# || fab fa-stack-overflow
+  YouTube: https://youtube.com/# || fab fa-youtube
+  Instagram: https://instagram.com/# || fab fa-instagram
   #Skype: skype:yourname?call|chat || fab fa-skype
 
 social_icons:
@@ -378,7 +381,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: true
-  permalink: https://github.com/sosiristseng
+  permalink: https://github.com/#
   title: Follow me on GitHub
 
 
@@ -514,7 +517,7 @@ lazyload: true
 # Pangu Support
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
-pangu: false
+pangu: true
 
 # Quicklink Support
 # For more information: https://github.com/GoogleChromeLabs/quicklink
@@ -847,7 +850,7 @@ canvas_ribbon:
 # Remember to use the https protocol of CDN files when you enable https on your site.
 vendors:
   # Available values: local, jsdelivr, unpkg
-  internal: local
+  internal: ""
 
   # Internal version: 3.1.0
   # anime: //unpkg.com/animejs@3.1.0/lib/anime.min.js
