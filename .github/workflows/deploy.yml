@@ -17,9 +17,9 @@ jobs:
         submodules: recursive
     
     - name: Setup Node
-      uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v1
       with:
-        node-version: '12'
+        node-version: '14'
     
     # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
     - name: Cache Dependencies

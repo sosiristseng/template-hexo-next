@@ -21,9 +21,9 @@ jobs:
         submodules: recursive
     
     - name: Setup Node
-      uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v1
       with:
-        node-version: '12'
+        node-version: '14'
     
     - name: Cache Dependencies
       uses: actions/cache@v2
