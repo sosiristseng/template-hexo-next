@@ -17,9 +17,9 @@ jobs:
         submodules: recursive
     
     - name: Setup Node
-      uses: actions/setup-node@v2.1.2
+      uses: actions/setup-node@v2-beta
       with:
-        node-version: '12.x'
+        node-version: '12'
     
     # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
     - name: Cache Dependencies
@@ -42,5 +42,4 @@ jobs:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: master
         publish_dir: ./public
-        force_orphan: true
         commit_message: ${{ github.event.head_commit.message }}

@@ -21,9 +21,9 @@ jobs:
         submodules: recursive
     
     - name: Setup Node
-      uses: actions/setup-node@v2.1.2
+      uses: actions/setup-node@v2-beta
       with:
-        node-version: '12.x'
+        node-version: '12'
     
     - name: Cache Dependencies
       uses: actions/cache@v2
@@ -36,5 +36,5 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
-    - name: Try to Build Website
+    - name: Build Website
       run: npm run build
