@@ -13,9 +13,9 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://sosiristseng.github.io
+url: https://ntumito.github.io
 root: /site-hexo-next/
-permalink: :year/:month/:title/
+permalink: :category/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
@@ -52,8 +52,7 @@ highlight:
   wrap: true
   hljs: false
 
-# Markdown-it config
-# Docs: https://github.com/hexojs/hexo-renderer-markdown-it/wiki
+# Markdown-it config: https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration
 markdown:
   render:
     html: true
@@ -74,7 +73,6 @@ markdown:
     - markdown-it-regexp
     - markdown-it-task-checkbox
     - markdown-it-named-headings
-    - markdown-it-latex2img
     - markdown-it-kbd
     - name: markdown-it-container
       options: success
@@ -88,6 +86,8 @@ markdown:
     - name: markdown-it-emoji
       options:
         shortcuts: {}
+    - markdown-it-latex2img
+
   anchors:
     level: 2
     collisionSuffix: 'v'
@@ -139,7 +139,7 @@ deploy:
   type: git
   repo: https://github.com/username/username.github.io.git
   token: $GITHUB_TOKEN
-  branch: master
+  branch: gh-pages
   name: username
   email: username@gmail.com
 
@@ -156,3 +156,5 @@ search:
 # Themes: https://hexo.io/themes/
 # Next theme: https://theme-next.js.org/
 theme: next
+
+# Theme config: _config.next.yml

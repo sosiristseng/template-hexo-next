@@ -3,17 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo cl && hexo g",
+    "build": "hexo g",
     "clean": "hexo cl",
-    "deploy": "hexo cl && hexo g && hexo d",
+    "deploy": "hexo cl && hexo g -d",
     "server": "hexo cl && hexo s -o --debug"
   },
   "hexo": {
-    "version": "4.2.1"
+    "version": "5.2.0"
   },
   "dependencies": {
     "hexo": "^5.2.0",
-    "hexo-deployer-git": "^2.1.0",
+    "hexo-browsersync": "^0.3.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",

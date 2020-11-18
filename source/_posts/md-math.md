@@ -3,6 +3,7 @@ title: MathJax rendering
 date: 2020-07-06 10:31:26
 tags: ["latex", "mathjax", "katex"]
 categories: ["Hexo"]
+mathjax: true
 ---
 
 To render math without escaping `\` or `_`, you might want to replace the default Markdown renderer (`hexo-renderer-marked`).
@@ -61,7 +62,10 @@ The delimiters `$`, `$$` rendering follows `pandoc` [rule](https://docs.mathjax.
 ### Block math
 
 Normaldistribution $X \sim N(\mu,\sigma^2)$:
-$$f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
 
 Fibonacci Sequence $A_n=A_{n-1}+A_{n-2}$, the ratio of two consecutive numbers converges to golden ratio
 $$\lim_{n\to \infty}\frac{A_{n-1}}{A_n}=\frac{\sqrt{5}-1}{2}.$$

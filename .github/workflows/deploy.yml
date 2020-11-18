@@ -1,5 +1,6 @@
 # https://github.com/peaceiris/actions-gh-pages
-name: Page Deploy
+
+name: github pages
 
 on:
   push:
@@ -11,17 +12,11 @@ jobs:
     name: "Build and Deploy"
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        submodules: recursive
-    
-    - name: Setup Node
-      uses: actions/setup-node@v2.1.2
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2.1.2
       with:
         node-version: '14'
     
-    # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
     - name: Cache Dependencies
       uses: actions/cache@v2
       with:
@@ -30,11 +25,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     
-    - name: Install Dependencies
-      run: npm ci
-
-    - name: Build Website
-      run: npm run build
+    - run: npm ci
+    - run: npm build
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
