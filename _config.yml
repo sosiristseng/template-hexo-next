@@ -34,6 +34,7 @@ skip_render:
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
+auto_spacing: true  # Similar to hexo-pangu
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
@@ -120,7 +121,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
+updated_option: mtime
 
 # Pagination
 ## Set per_page to 0 to disable pagination
