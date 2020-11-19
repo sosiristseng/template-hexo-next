@@ -1,8 +1,8 @@
 ---
 title: First post
 date: 2020-06-28 16:47:33
-tags: ["test tag"]
-categories: ["First"]
+tags: ["test"]
+categories: []
 weight: 100
 ---
 

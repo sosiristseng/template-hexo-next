@@ -29,7 +29,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: code
 i18n_dir: :lang
-skip_render: 
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -129,20 +129,10 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-## 
+##
 include:
 exclude:
 ignore:
-
-# Deployment: https://hexo.io/docs/one-command-deployment.html
-deploy:
-  type: git
-  repo: https://github.com/username/username.github.io.git
-  token: $GITHUB_TOKEN
-  branch: gh-pages
-  name: username
-  email: username@gmail.com
-
 
 # Plugins: https://hexo.io/plugins/
 ## Seach data generator plugin for Hexo

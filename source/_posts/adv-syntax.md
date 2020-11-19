@@ -205,8 +205,6 @@ pdf:
 {% pdf pdf/sample.pdf 700px %}
 ```
 
-{% pdf pdf/sample.pdf 700px %}
-
 pdf files are placed in `source/pdf/` folder in this case.
 
 {% note warning %}
@@ -217,21 +215,6 @@ pdf files are placed in `source/pdf/` folder in this case.
 ## Documents iframe
 
 [📄](https://hexo.io/zh-tw/docs/tag-plugins.html#iframe)
-
-View your documents inline by [embedding](https://gist.github.com/tzmartin/1cf85dc3d975f94cfddc04bc0dd399be) the Google Docs Viewer into `iframe`.
-
-{% note default %}
-```markdown
-{% iframe https://docs.google.com/viewer?url=FILEPATH&embedded=true [width] [height] %}
-```
-{% endnote %}
-
-
-```markdown
-{% iframe "https://docs.google.com/viewer?url=https://gitlab.com/sosiristseng/sosiristseng.gitlab.io/uploads/55f69d2020662c7900269c2c9c4f6a40/file_example_PPT_250kB.ppt&embedded=true" %}
-```
-
-{% iframe "https://docs.google.com/viewer?url=https://gitlab.com/sosiristseng/sosiristseng.gitlab.io/uploads/55f69d2020662c7900269c2c9c4f6a40/file_example_PPT_250kB.ppt&embedded=true" %}
 
 ## Note
 

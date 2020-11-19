@@ -1,29 +1,26 @@
-image: node:erbium-buster  # Node v12 LTS
+image: node:lts-alpine
 
 cache:
   paths:
-    - node_modules/
-
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+    - "~/.npm"
 
 before_script:
   - npm install hexo-cli -g
-  - npm install
+  - npm ci
 
 test:
   script:
-    - hexo generate
+    - npm run build
   except:
-    - master
+    - main
 
 pages:
   script:
-    - hexo generate
+    - npm run build
     # Compressed assets
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|svg\|xml\)$' -exec gzip -f -k {} \;
   artifacts:
     paths:
       - public
   only:
-    - master
+    - main

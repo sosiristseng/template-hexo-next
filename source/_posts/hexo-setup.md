@@ -2,7 +2,7 @@
 title: Hexo website setup
 date: 2020-07-06 15:26:17
 tags: ["hexo", "github", "gitlab", "nodejs"]
-categories: ["SSG"]
+categories: ["Hexo"]
 ---
 
 Some notes about setting up my Hexo blog site, as a reminder. 😁

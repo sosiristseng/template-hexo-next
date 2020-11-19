@@ -2,7 +2,7 @@
 title: Comparison of static site generators
 date: 2020-06-29 16:47:33
 tags: ["hexo", "hugo", "jupyterbook", "nikola", "jekyll", "docsify"]
-categories: ["SSG"]
+categories: ["Hexo"]
 ---
 
 [Hugo](https://gohugo.io/) has some $\LaTeX$ math [rendering issue](https://github.com/gcushen/hugo-academic/issues/1679) from its Markdown [parser](https://github.com/yuin/goldmark). I moved my blog from Hugo to [Hexo](https://hexo.io/) since Latex math rendering is of high priority.
