@@ -5,7 +5,7 @@
 Site template powered by [Hexo Next](https://theme-next.js.org/) and [GitHub pages](https://pages.github.com/).
 
 ## TL;DR
-1. Use this site as a template
+1. Click `use as template` in GitHub or clone this repo to GitLab
 2. Change `baseurl` and personal settings, etc in `_config.yml`
    ```yml
    url: https://username.github.io
@@ -17,5 +17,5 @@ Site template powered by [Hexo Next](https://theme-next.js.org/) and [GitHub pag
 - Fast and elegant [Next theme](https://theme-next.js.org/)
 - Fast [`markdown-it`](https://github.com/hexojs/hexo-renderer-markdown-it) renderer with a bunch of plugins
 - Serve-side MathJax math rendering powered by [markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img)
-- Listed JS package dependencies in `package.json`
-- GitHub actions for deploy the HTML pages to `master` branch from `source` (default) branch
+- On-the-fly MathJax math rendering by [markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img)
+- GitHub actions for deploy the HTML pages to `gh-pages` branch from `main` (default) branch
