@@ -53,48 +53,7 @@ highlight:
   wrap: true
   hljs: false
 
-# Markdown-it config: https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  plugins:
-    - markdown-it-abbr
-    - markdown-it-footnote
-    - markdown-it-ins
-    - markdown-it-sub
-    - markdown-it-sup
-    - markdown-it-deflist
-    - markdown-it-imsize
-    - markdown-it-mark
-    - markdown-it-regexp
-    - markdown-it-task-checkbox
-    - markdown-it-named-headings
-    - markdown-it-kbd
-    - name: markdown-it-container
-      options: success
-    - name: markdown-it-container
-      options: info
-    - name: markdown-it-container
-      options: warning
-    - name: markdown-it-container
-      options: danger
-    - markdown-it-deflist
-    - name: markdown-it-emoji
-      options:
-        shortcuts: {}
-    - markdown-it-latex2img
-
-  anchors:
-    level: 2
-    collisionSuffix: 'v'
-    permalink: true
-    permalinkClass: header-anchor
-    permalinkSymbol: ''
+# Pandoc config (optional): https://github.com/wzpan/hexo-renderer-pandoc
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -120,7 +79,6 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-## Use post's date for updated date unless set in front-matter
 updated_option: mtime
 
 # Pagination
