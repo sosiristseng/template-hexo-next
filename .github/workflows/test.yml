@@ -4,12 +4,12 @@ name: Test
 
 on:
   pull_request:
-    branches:
-      - main
+    branches-ignore:
+      - gh-pages
 
 jobs:
   test:
-    name: "Test build"
+    name: Test website
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -28,5 +28,5 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - run: npm ci
+    - run: npm ci --production
     - run: npm run build
