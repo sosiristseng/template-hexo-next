@@ -4,7 +4,8 @@ env:
 
 on:
   pull_request:
-    branches: [ $default-branch ]
+    branches:
+      - main
 
 jobs:
   test:
