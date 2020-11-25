@@ -17,7 +17,7 @@ jobs:
         node-version: '14'
 
     - name: Setup Pandoc
-    - run: curl -fssL https://github.com/jgm/pandoc/releases/download/2.11.2/pandoc-2.11.2-linux-amd64.tar.gz | sudo tar xvzf - --strip-components 1 -C /usr/local
+      run: curl -fssL https://github.com/jgm/pandoc/releases/download/${PANDOC_VER}/pandoc-${PANDOC_VER}-linux-amd64.tar.gz | sudo tar xvzf - --strip-components 1 -C /usr/local
 
     - name: Cache Dependencies
       uses: actions/cache@v2
