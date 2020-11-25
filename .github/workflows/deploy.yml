@@ -1,6 +1,7 @@
 name: github pages
 env:
   PANDOC_VER: '2.11.2'
+  NODE_ENV: production
 
 on:
   push:
@@ -27,12 +28,8 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-
     - name: Build website
-      run: |
-        npm ci --production
-        npm run build
-
+      run: npm ci && npm run build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

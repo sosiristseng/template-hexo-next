@@ -1,6 +1,7 @@
 name: Test
 env:
   PANDOC_VER: '2.11.2'
+  NODE_ENV: production
 
 on:
   pull_request:
@@ -27,8 +28,5 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-
     - name: Build website
-      run: |
-        npm ci --production
-        npm run build
+      run: npm ci && npm run build
