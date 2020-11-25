@@ -4,7 +4,8 @@ env:
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -16,7 +17,7 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Setup Pandoc
+    - name: Setup Pandoc ${{ PANDOC_VER }}
       run: curl -fssL https://github.com/jgm/pandoc/releases/download/${PANDOC_VER}/pandoc-${PANDOC_VER}-linux-amd64.tar.gz | sudo tar xvzf - --strip-components 1 -C /usr/local
 
     - name: Cache Dependencies
