@@ -7,7 +7,7 @@ test:
   image: node:lts-alpine
   stage: test
   script:
-  - apk add --update pandoc
+  - apk add --update pandoc  --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/
   - npm ci --cache .npm --prefer-offline --production
   - npm run build
   # Pass artifacts to the next stage
