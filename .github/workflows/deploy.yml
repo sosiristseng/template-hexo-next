@@ -38,4 +38,5 @@ jobs:
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
-        commit_message: ${{ github.event.head_commit.message }}
+        force_orphan: true
+        full_commit_message: ${{ github.event.head_commit.message }}
