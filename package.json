@@ -5,7 +5,7 @@
   "scripts": {
     "build": "NODE_ENV=production hexo g",
     "clean": "hexo cl",
-    "deploy": "NODE_ENV=production hexo cl && hexo g -d",
+    "deploy": "hexo cl && NODE_ENV=production hexo g -d",
     "server": "hexo cl && NODE_ENV=development hexo s -o --debug"
   },
   "hexo": {
