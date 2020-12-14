@@ -2,8 +2,9 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-categories: 
+categories:
 comments: false
+mathjax: false
 ---
 
 <!-- more -->
