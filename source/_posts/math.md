@@ -30,6 +30,8 @@ And the install the corresponding Hexo renderer.
 npm i hexo-renderer-pandoc
 ```
 
+See also [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for server-side rendering.
+
 ### Option 2: with `hexo-renderer-markdown-it`
 
 [markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img) renders math formulae on <https://math.now.sh/> and returns `svg` images.
@@ -46,101 +48,137 @@ markdown:
     - (other plugins...)
 ```
 
-## MathJax rendering
+## MathJax rendering Guide
 
-For syntax, see [MathJax quick reference 📄](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+See [MathJax quick reference 📄](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) and [KaTeX performance test](https://www.intmath.com/cg5/katex-mathjax-comparison.php) for syntax.
 
-The delimiters `$`, `$$` rendering follows [`pandoc`'s rule](https://docs.mathjax.org/en/latest/basic/mathematics.html#tex-and-latex-input).
+The delimiters `$`, `$$` follow [pandoc's rule](https://docs.mathjax.org/en/latest/basic/mathematics.html#tex-and-latex-input).
 
-### Inline math
+## Inline math
 
-- Pythagoras theorem: $a^2+b^2=c^2$
+Enclosed by `$`...`$` or `\\(` ... `\\)`
+
+- Pythagoras theorem: \\(a^2+b^2=c^2\\)
 - Sum of arithmetic sequence: $S_{n}=n a_{1}+\frac{n(n-1)}{2} d, n \in N^{*}$
 - Fundamental theorem of calculus: $\int_{a}^{b} f(x) d x=F(b)-F(a)=\left.F(x)\right|_{a} ^{b}$
 - Binomial distribution: $P_{n}(k)=C_{n}^{k} p^{k} q^{n-k} \quad k=0,1,2 \ldots \ldots, n$
+- Greek letters: $\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega$
 
-### Block math
+## Block math
 
-Normaldistribution $X \sim N(\mu,\sigma^2)$:
+Enclosed by `$$`...`$$` or `\\[` ... `\\]`
 
+### Repeating fractions
+
+$$
+\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} \equiv 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
+$$
+
+### Summation notation
+
+$$
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$
+
+### Probability density of normal distribution
 $$
 f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 $$
 
-Fibonacci Sequence $A_n=A_{n-1}+A_{n-2}$, the ratio of two consecutive numbers converges to golden ratio
+### The ratio of two consecutive numbers in Fibonacci Sequence
+
 $$\lim_{n\to \infty}\frac{A_{n-1}}{A_n}=\frac{\sqrt{5}-1}{2}.$$
 
-Factorisation
+### Factorisation
 
-$$\begin{split}(x−1)(x−3)&=x^2−4x+3 \\
-&=x^2−4x+4−1 \\
+$$
+\begin{split}(x−1)(x−3)&=x^2−4x+3 \cr
+&=x^2−4x+4−1 \cr
 &=(x−2)^2−1
 \end{split}
 $$
 
-Dirichlet function
+### Dirichlet function
 
 $$
 D(x)=
 \begin{cases}
-1,& x \in Q \\
+1,& x \in Q \cr
 0,& x \notin Q
 \end{cases}
 $$
 
-Gauss's law
+### Gauss's law
 
 $$
 \iiint_{\Omega}\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right) d v=\iint_{\Sigma} P d y d z+Q d z d x+R d x d y
 $$
 
-Vandermonde matrix
+### Vandermonde matrix
 
 $$D_{n-1}=\left|\begin{array}{cccc}
-1 & 1 & \dots & 1 \\
-x_{2} & x_{3} & \dots & x_{n} \\
-\vdots & \vdots & & \vdots \\
+1 & 1 & \dots & 1 \cr
+x_{2} & x_{3} & \dots & x_{n} \cr
+\vdots & \vdots & & \vdots \cr
 x_{2}^{n-2} & x_{3}^{n-2} & \dots & x_{n}^{n-2}
 \end{array}\right|=\prod_{2 \leq j<i \leq n}\left(x_{i}-x_{j}\right)$$
 
-System of linear equations
+### System of linear equations
 
-$$\left\{\begin{aligned}
-a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n} &=b_{1} \\
-a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n} &=b_{2} \\
-\cdots \cdots \cdots \\
+$$
+\left\\{
+\begin{aligned}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n} &=b_{1} \cr
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n} &=b_{2} \cr
+\cdots \cdots \cdots \cr
 a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n} &=b_{m}
-\end{aligned}\right.$$
+\end{aligned}
+\right\\}
+$$
 
-### Physics
+### Lorenz Equations
+$$
+\begin{aligned}
+\dot{x} &= \sigma(y-x) \cr
+\dot{y} &= \rho x - y - xz \cr
+\dot{z} &= -\beta z + xy
+\end{aligned}
+$$
 
-- Newton's first law: $\sum \vec{F}_{i}=\frac{\mathrm{d} \vec{v}}{\mathrm{d} t}=0$
-- Newton's second law: $\vec{F}=\frac{\mathrm{d} m}{\mathrm{d} t} \vec{v}+m \frac{\mathrm{d} \vec{v}}{\mathrm{d} t}=\frac{\mathrm{d} m}{\mathrm{d} t} \vec{v}+m \vec{a}=\frac{\mathrm{d} m}{\mathrm{d} t} \vec{v}+m \frac{\mathrm{d}^{2} \vec{r}}{\mathrm{d} t^{2}}$
-- Newton's third law: $\overrightarrow{F_{12}}=-\overrightarrow{F_{21}}$
-- Mass–energy equivalence: $E=mc^2$
+### Cross Product
 
-Law of gravity: $F=\frac{G M m}{r^{2}}$
-$$G \frac{m M}{(r+h)^{2}}=m \frac{\nu^{2}}{(r+h)}$$
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} &\mathbf{j} &\mathbf{k} \cr
+\frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} &0 \cr
+\frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} &0
+\end{vmatrix}
+$$
 
-Kirchhoff Laws
-$$\left[\frac{\partial\left(\Delta_{r} H_{m}\right)}{\partial T}\right]_{p}=\sum_{B} v_{B} C_{p, m}(B)$$
+### Maxwell's Equations
 
-Second lawof thermodynamics
-$$d S \geq \frac{\delta Q}{T}$$
+$$
+\begin{aligned}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &= \frac{4\pi}{c}\vec{\mathbf{j}} \cr
+\nabla \cdot \vec{\mathbf{E}} &= 4 \pi \rho \cr
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \cr
+\nabla \cdot \vec{\mathbf{B}} &= 0 \end{aligned}
+$$
 
-## Chemistry
+
+## Chemical equations
+
+- `\ce{...}` for chemical equations
+- `\pu{...}` for units
 
 Ions and precipitation: $\ce{SO4^2- + Ba^2+ -> BaSO4 v}$
+
+Units: $C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$
 
 Ammonia synthesis (notice the arrow length is not adjustable in Mathjax)
 $$
 \ce{N2 + 3H2 <=>T[ heat and pressure][catalyst] 2NH3}
 $$
-
-Equilibrium constant:$\mathrm{Zn}+2 \mathrm{HCl}(\mathrm{aq})=\mathrm{H}_{2}+\mathrm{ZnCl}_{2} \quad(\mathrm{aq})$
-$$K^{\theta}=\frac{\left[p\left(\mathrm{H}_{2}\right) / p^{\theta}\right]\left[c\left(\mathrm{ZnCl}_{2}\right)\right]}{c^{2}(\mathrm{HC})}$$
-
-## Biology
 
 Photosynthesis
 
