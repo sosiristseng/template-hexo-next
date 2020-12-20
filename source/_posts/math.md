@@ -1,52 +1,63 @@
 ---
 title: MathJax rendering
 date: 2020-07-06 10:31:26
-tags: ["latex", "mathjax", "katex"]
+tags: ["mathjax", "hexo"]
 categories: ["Hexo"]
 mathjax: true
 ---
 
-To render math without escaping `\` or `_`, you might want to replace the default Markdown renderer (`hexo-renderer-marked`).
+To render math without escaping `\` or `_`, you might want to replace the default Markdown renderer (`hexo-renderer-marked`)  in Hexo.
 
 <!-- more -->
+## Change Hexo renderer
 
-## Setup
+The guide is partly from the [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html)
 
-Some of the guide is from [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html)
-
-Uninstall the default Markdown renderer (`hexo-renderer-marked`) since it treats `\` and `_` character with Markdown syntax.
+Uninstall the default Markdown renderer (`hexo-renderer-marked`) since it sees `\` and `_` character in the math formula as Markdown syntax.
 
 ```bash
 npm un hexo-renderer-marked
 ```
 
-### Option 1: with `hexo-renderer-pandoc`
+Then you can choose between the `pandoc` or the `markdown-it` renderer.
 
-First of all, [install `pandoc`](https://pandoc.org/installing.html).
+{% tabs renderer %}
+<!-- tab pandoc -->
 
-And the install the corresponding Hexo renderer.
+This setup also requires [`pandoc`](https://pandoc.org/installing.html) to be installed.
 
 ```bash
 npm i hexo-renderer-pandoc
 ```
 
-See also [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for server-side rendering.
+Optionally, you can use [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for server side rendering on `hexo generate`.
 
-### Option 2: with `hexo-renderer-markdown-it`
+<!-- endtab -->
 
-[markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img) renders math formulae on <https://math.now.sh/> and returns `svg` images.
+<!-- tab markdown-it -->
+
+Install the `markdown-it` renderer for Hexo.
 
 ```bash
-npm i hexo-renderer-markdown-it markdown-it-latex2img
+npm i hexo-renderer-markdown-it
 ```
 
+You can either install [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for server side rendering on `hexo generate`. Or [markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img) to convert math expressions to SVG images online at <https://math.now.sh/>.
+
+Note for the latter method:
+- It does not play well with dark mode (the text will still be black thus invisible) and may mess with fancybox image gallery.
+- Add `markdown-it-latex2img` to the plugin list. For the rest of the plugins please checkout the [Wiki](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration).
+
 ```yml _config.yml
-# _config.yml
 markdown:
   plugins:
     - markdown-it-latex2img
     - (other plugins...)
 ```
+
+<!-- endtab -->
+{% endtabs %}
+
 
 ## MathJax rendering Guide
 
