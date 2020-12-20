@@ -9,7 +9,7 @@ This post showcases the basic Markdown syntax you'll see in major Markdown edito
 
 <!-- more -->
 
-Taken from
+Taken from:
 - [Grav](http://learn.getgrav.org/content/markdown)
 - [Hugo LoveIt theme](https://hugoloveit.com/basic-markdown-syntax/)
 - [Pandoc markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
