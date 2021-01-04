@@ -18,5 +18,4 @@ In `_config.next.yml`, change the settings of the Next theme. Also see [Next the
 ## Features
 - [Hexo](https://hexo.io/zh-tw/) static site generator.
 - Fast and elegant [Next theme](https://theme-next.js.org/).
-- [pandoc as renderer](https://github.com/wzpan/hexo-renderer-pandoc).
 - GitHub actions and GitLab CI enabled.
