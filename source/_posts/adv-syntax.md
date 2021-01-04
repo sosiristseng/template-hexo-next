@@ -91,10 +91,10 @@ _.compact([0, 1, false, 2, '', 3]);
 [Gist @ Hexo](https://hexo.io/docs/tag-plugins.html#Gist)
 
 ```markdown
-{% gist sosiristseng/5406c151b54ed182bf8e57e1a2a4c57e %}
+{% gist stefanopalmieri/cdd42d4bd9c806c644de7e7ca86e59b0 %}
 ```
 
-{% gist sosiristseng/5406c151b54ed182bf8e57e1a2a4c57e %}
+{% gist stefanopalmieri/cdd42d4bd9c806c644de7e7ca86e59b0 %}
 
 ### Include code
 
@@ -194,13 +194,9 @@ pdf:
 2. PDF file loading may be block by the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) policy.
 {% endnote %}
 
-## Documents iframe
-
-[iframe@ Hexo](https://hexo.io/zh-tw/docs/tag-plugins.html#iframe)
-
 ## Note
 
-[note @ Hexo](https://theme-next.js.org/docs/tag-plugins/note.html). Similar to [admonitions @ Hugo LoveIt](https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition).
+[note @ Next](https://theme-next.js.org/docs/tag-plugins/note.html). Similar to [admonitions @ Hugo LoveIt](https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition).
 
 ```yml _config.next.yml
 # Note tag (bs-callout)
@@ -452,5 +448,6 @@ Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo
 
 ## Others
 
-* [Group Pictures](https://theme-next.js.org/docs/tag-plugins/group-pictures.html)
-* [Caniuse](https://theme-next.js.org/docs/tag-plugins/caniuse.html)
+- [iframes](https://hexo.io/zh-tw/docs/tag-plugins.html#iframe)
+- [Group Pictures](https://theme-next.js.org/docs/tag-plugins/group-pictures.html)
+- [Caniuse](https://theme-next.js.org/docs/tag-plugins/caniuse.html)
