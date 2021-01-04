@@ -168,10 +168,10 @@ The directory containing code is defined at `code_dir` option in `_config.yml`, 
 [Vimeo @ Hexo](https://hexo.io/docs/tag-plugins.html#Vimeo)
 
 ```markdown
-{% vimeo 63830488 %}
+{% vimeo 253989945 %}
 ```
 
-{% vimeo 63830488 %}
+{% vimeo 253989945 %}
 
 ## PDF files
 
