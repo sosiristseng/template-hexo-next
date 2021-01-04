@@ -10,4 +10,4 @@ The stuff you'll see in the front page.
 
 <!-- more -->
 
-The frontmatter `sticky: 100` pins this post on top.
+Set `sticky: 100` in the frontmatter to pin this post on top.
