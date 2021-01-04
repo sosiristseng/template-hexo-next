@@ -75,13 +75,9 @@ This is a comment, you should not see me
 
 ```markdown
 
----
-
 ***
 
 ```
-
----
 
 ***
 
@@ -100,6 +96,8 @@ __rendered as bold text__
 _rendered as italicized text_
 
 ~~Strike through this text~~
+
+==Marking this text==
 ```
 
 
@@ -112,6 +110,8 @@ __rendered as bold text__
 _rendered as italicized text_
 
 ~~Strike through this text~~
+
+==Marking this text==
 
 ## Blockquotes
 
@@ -132,10 +132,11 @@ _rendered as italicized text_
 
 ## Superscripts and subscripts
 
+(Disabled in favor of latex math syntax)
+
 ```markdown
 H~2~O is a liquid.  2^10^ is 1024.
 ```
-
 
 ## Lists
 
@@ -265,6 +266,8 @@ Use use editors like typora or marktext to edit tables with ease.
 
 ### Simple tables
 
+(Pandoc only)
+
 ```markdown
   Right     Left     Center     Default
 -------     ------ ----------   -------
@@ -272,15 +275,11 @@ Use use editors like typora or marktext to edit tables with ease.
     123     123       123          123
       1     1          1             1
 ```
-
-  Right     Left     Center     Default
--------     ------ ----------   -------
-     12     12        12            12
-    123     123       123          123
-      1     1          1             1
 
 ### Grid tables
 
+(Pandoc only)
+
 ```markdown
 +---------------+---------------+--------------------+
 | Fruit         | Price         | Advantages         |
@@ -299,22 +298,6 @@ Use use editors like typora or marktext to edit tables with ease.
 +---------------+---------------+--------------------+
 
 ```
-
-+---------------+---------------+--------------------+
-| Fruit         | Price         | Advantages         |
-+===============+===============+====================+
-| Bananas       | $1.34         | - built-in wrapper |
-|               |               | - bright color     |
-+---------------+---------------+--------------------+
-| Oranges       | $2.10         | - cures scurvy     |
-|               |               | - tasty            |
-+---------------+---------------+--------------------+
-
-+---------------+---------------+--------------------+
-| Right         | Left          | Centered           |
-+==============:+:==============+:==================:+
-| Bananas       | $1.34         | built-in wrapper   |
-+---------------+---------------+--------------------+
 
 ## Links
 
@@ -350,7 +333,7 @@ This is a footnote with "label"[^label]
 
 ## Keyboard strokes
 
-[markdown-it-kbd](https://www.npmjs.com/package/markdown-it-kbd) is needed.
+Needs [markdown-it-kbd](https://www.npmjs.com/package/markdown-it-kbd).
 
 ```markdown
 [[Ctrl]] + [[Alt]] + [[Delete]]
@@ -369,16 +352,12 @@ This is a footnote with "label"[^label]
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Alt text](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
-You could [attach](https://docs.github.com/en/github/managing-your-work-on-github/file-attachments-on-issues-and-pull-requests) images or documents to GitHub issues for free image hosting.
+You can [attach](https://docs.github.com/en/github/managing-your-work-on-github/file-attachments-on-issues-and-pull-requests) images or documents to GitHub issues for free image hosting.
 
-## MathJax rendering
+## Math rendering
 
-See {% post_link ssg/md-math "math rendering" %}.
+See {% post_link math "math rendering" %}.
 
-## Emojis
+## Extended syntax
 
-See {% post_link ssg/emoji "emoji" %}.
-
-## Advanced syntax powered by Hexo tag plugins
-
-See {% post_link ssg/adv-syntax "Advanced syntax" %}.
+See {% post_link adv-syntax "extended syntax" %}.

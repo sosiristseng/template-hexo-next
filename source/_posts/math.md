@@ -1,52 +1,95 @@
 ---
-title: MathJax rendering
+title: LaTeX Math rendering
 date: 2020-07-06 10:31:26
-tags: ["mathjax", "hexo"]
+tags: ["mathjax", "katex", "hexo"]
 categories: ["Hexo"]
 mathjax: true
 ---
 
-To render math without escaping `\` or `_`, you might want to replace the default Markdown renderer (`hexo-renderer-marked`)  in Hexo.
+Rendering math equations in LaTeX style.
 
 <!-- more -->
-## Change Hexo renderer
 
-The guide is partly from the [Hexo Next docs](https://theme-next.js.org/docs/third-party-services/math-equations.html)
+## Change the Hexo markdown renderer
 
-Uninstall the default Markdown renderer (`hexo-renderer-marked`) since it sees `\` and `_` character in the math formula as Markdown syntax.
+This guide is partly from the [Hexo Next docs for math equations](https://theme-next.js.org/docs/third-party-services/math-equations.html)
+
+Uninstall the default Markdown renderer (`hexo-renderer-marked`) because it confuses `\` and `_` character in the math equations as Markdown syntax.
 
 ```bash
 npm un hexo-renderer-marked
 ```
 
-Then you can choose between the `pandoc` or the `markdown-it` renderer.
+Then you can choose between the `pandoc` (with MathJax) or the `markdown-it` (with KaTeX) renderer.
 
 {% tabs renderer %}
-<!-- tab pandoc -->
+<!-- tab pandoc + MathJax -->
 
-This setup also requires [`pandoc`](https://pandoc.org/installing.html) to be installed.
+### Pandoc and MathJax
+
+Install [`pandoc`](https://pandoc.org/installing.html) and the Hexo renderer.
 
 ```bash
 npm i hexo-renderer-pandoc
 ```
 
-Optionally, you can use [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for server side rendering on `hexo generate`.
+And activate MathJax in the theme config.
+
+```yaml _config.next.yml
+math:
+  every_page: false
+  mathjax:
+    enable: true
+    # Available values: none | ams | all
+    tags: none
+```
+
+Set `mathjax: true` in the page frontmatter to load the MathJax library.
+
+You can also install [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for rendering math equations server-side.
 
 <!-- endtab -->
 
 <!-- tab markdown-it -->
 
-Install the `markdown-it` renderer for Hexo.
+### Katex
 
+⚠️ Chemical expressions are not supported in this setup.
+
+1. Install the `markdown-it` renderer and KaTeX plugin.
 ```bash
-npm i hexo-renderer-markdown-it
+npm i hexo-renderer-markdown-it @iktakahiro/markdown-it-katex
 ```
 
-You can either install [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax) for server side rendering on `hexo generate`. Or [markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img) to convert math expressions to SVG images online at <https://math.now.sh/>.
+2. Add KaTeX to `markdown-it`'s plugin list:
+```yaml _config.yml
+markdown:
+  plugins:
+    - "@iktakahiro/markdown-it-katex"
+    - (Other plugins ...)
+```
 
-Note for the latter method:
-- It does not play well with dark mode (the text will still be black thus invisible) and may mess with fancybox image gallery.
-- Add `markdown-it-latex2img` to the plugin list. For the rest of the plugins please checkout the [Wiki](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration).
+3. enable KaTeX in the theme config.
+```yaml _config.next.yml
+math:
+  every_page: false
+  mathjax:
+    enable: true
+    # Available values: none | ams | all
+    tags: none
+```
+
+Set `mathjax: true` (yesp, not `katex`) in the frontmatter to load the math library.
+
+### MathJax (Server-side rendering alternative)
+
+Install [markdown-it-latex2img](https://github.com/MakerGYT/markdown-it-latex2img) to convert math expressions to SVG images online with MathJax at <https://math.now.sh/>.
+
+⚠️ However, it does not play well with dark mode. The text will still be black and invisible. And it may mess with fancybox image gallery.
+
+```bash
+npm i hexo-renderer-markdown-it markdown-it-latex2img
+```
 
 ```yml _config.yml
 markdown:
@@ -58,16 +101,11 @@ markdown:
 <!-- endtab -->
 {% endtabs %}
 
-The examples below use the pandoc renderer.
+## Math rendering Guide
 
+For examples, see [MathJax quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) and [KaTeX performance test](https://www.intmath.com/cg5/katex-mathjax-comparison.php).
 
-## MathJax rendering Guide
-
-See [MathJax quick reference 📄](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) and [KaTeX performance test](https://www.intmath.com/cg5/katex-mathjax-comparison.php) for syntax. And you can see the commands by right clck -> Show math as -> TeX commands.
-
-The delimiters `$`, `$$` follow [pandoc's rule](https://docs.mathjax.org/en/latest/basic/mathematics.html#tex-and-latex-input).
-
-## Inline math
+## Inline math examples
 
 Enclosed by `$`...`$`
 
@@ -77,7 +115,7 @@ Enclosed by `$`...`$`
 - Binomial distribution: $P_{n}(k)=C_{n}^{k} p^{k} q^{n-k} \quad k=0,1,2 \ldots \ldots, n$
 - Greek letters: $\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega$
 
-## Block math
+## Block math examples
 
 Enclosed by `$$`...`$$`
 
@@ -106,10 +144,10 @@ $$\lim_{n\to \infty}\frac{A_{n-1}}{A_n}=\frac{\sqrt{5}-1}{2}.$$
 ### Factorisation
 
 $$
-\begin{split}(x−1)(x−3)&=x^2−4x+3 \cr
+\begin{aligned}(x−1)(x−3)&=x^2−4x+3 \cr
 &=x^2−4x+4−1 \cr
 &=(x−2)^2−1
-\end{split}
+\end{aligned}
 $$
 
 ### Dirichlet function
@@ -179,23 +217,3 @@ $$
 \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \cr
 \nabla \cdot \vec{\mathbf{B}} &= 0 \end{aligned}
 $$
-
-
-## Chemical equations
-
-- `\ce{...}` for chemical equations
-- `\pu{...}` for units
-
-Ions and precipitation: $\ce{SO4^2- + Ba^2+ -> BaSO4 v}$
-
-Units: $C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$
-
-Ammonia synthesis (notice the arrow length is not adjustable in Mathjax)
-$$
-\ce{N2 + 3H2 <=>T[ heat and pressure][catalyst] 2NH3}
-$$
-
-Photosynthesis
-
-$$\ce{6CO2 + 6H2O ->T[Photons][enzymes] C6H12O6 + 6O2}$$
-
