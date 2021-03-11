@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     name: Build website
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Restore last modified time
@@ -25,8 +25,9 @@ jobs:
           ${{ runner.os }}-node-
     - name: Install pandoc via micromamba
       run: |
-        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvjC /tmp --strip-components=1
-        /tmp/micromamba create -p ~/pandoc pandoc -c conda-forge 
-        /tmp/micromamba activate ~/pandoc
+        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba --strip-components=1
+        ./micromamba shell init -s bash -p ~/micromamba
+        source ~/.bashrc
+        micromamba install pandoc -c conda-forge
     - name: Build website
       run: npm ci && npm run build
