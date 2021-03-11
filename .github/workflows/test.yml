@@ -23,10 +23,10 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - name: Install pandoc via mamba
+    - name: Install pandoc via micromamba
       run: |
-        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | sudo tar -xvj /bin/micromamba --strip-components=1
-        micromamba create -p ~/bin pandoc -c conda-forge 
-        micromamba activate ~/bin
+        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj ./micromamba --strip-components=1
+        ./micromamba create -p ~/pandoc pandoc -c conda-forge 
+        ./micromamba activate ~/pandoc
     - name: Build website
       run: npm ci && npm run build
