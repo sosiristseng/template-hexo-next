@@ -1,6 +1,4 @@
 name: github pages
-env:
-  NODE_ENV: production
 
 on:
   push:
@@ -10,7 +8,7 @@ on:
 jobs:
   build:
     name: Build website
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Restore last modified time
@@ -25,6 +23,11 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+    - name: Install pandoc via micromamba
+      run: |
+        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvjC /tmp --strip-components=1
+        /tmp/micromamba create -p $HOME/pkg pandoc -c conda-forge
+        echo "$HOME/pkg/bin" >> $GITHUB_PATH
     - name: Build website
       run: npm ci && npm run build
     - name: Deploy
