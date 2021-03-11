@@ -25,9 +25,8 @@ jobs:
           ${{ runner.os }}-node-
     - name: Install pandoc via micromamba
       run: |
-        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba --strip-components=1
-        ./micromamba shell init -s bash -p ~/micromamba
-        source ~/.bashrc
-        micromamba install pandoc -c conda-forge
+        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvjC /tmp --strip-components=1
+        /tmp/micromamba create -p $HOME/pkg pandoc -c conda-forge
+        echo "$HOME/pkg/bin" >> $GITHUB_PATH
     - name: Build website
       run: npm ci && npm run build
