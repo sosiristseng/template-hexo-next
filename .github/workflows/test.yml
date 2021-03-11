@@ -1,6 +1,4 @@
 name: Test
-env:
-  NODE_ENV: production
 
 on:
   pull_request:
@@ -27,10 +25,8 @@ jobs:
           ${{ runner.os }}-node-
     - name: Install pandoc via mamba
       run: |
-        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | sudo tar -xvJ /bin/micromamba
-        micromamba shell init -s bash -p ~/micromamba
-        source ~/.bashrc
-        micromamba activate
-        micromamba install pandoc -c conda-forge
+        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | sudo tar -xvj /bin/micromamba --strip-components=1
+        micromamba create -p ~/bin pandoc -c conda-forge 
+        micromamba activate ~/bin
     - name: Build website
       run: npm ci && npm run build
