@@ -27,7 +27,7 @@ jobs:
           ${{ runner.os }}-node-
     - name: Install pandoc via mamba
       run: |
-        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | sudo tar -xvC /bin/micromamba
+        wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | sudo tar -xvjC /bin/micromamba
         micromamba shell init -s bash -p ~/micromamba
         source ~/.bashrc
         micromamba activate
