@@ -8,7 +8,6 @@ cache:
   - .npm/
 
 variables:
-  NODE_ENV: "production"
   PDC_VER: "2.12"
 
 before_script:
