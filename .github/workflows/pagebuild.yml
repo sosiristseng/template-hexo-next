@@ -1,8 +1,5 @@
 name: github pages
 
-env:
-  PDC_VER: "2.13"
-
 on:
   push:
     branches:
@@ -14,7 +11,7 @@ on:
 jobs:
   build:
     name: Build website
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Restore last modified time
@@ -23,14 +20,12 @@ jobs:
       with:
         node-version: '14'
     - name: Cache Dependencies
-      uses: actions/cache@v2.1.4
+      uses: actions/cache@v2.1.5
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - name: Install pandoc 
-      run: wget -qO- https://github.com/jgm/pandoc/releases/download/${PDC_VER}/pandoc-${PDC_VER}-linux-amd64.tar.gz | sudo tar xvz --strip-components 1 -C /usr/local/
     - name: Build website
       run: npm ci && npm run build
     - name: Deploy to GH pages
@@ -40,3 +35,4 @@ jobs:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         full_commit_message: ${{ github.event.head_commit.message }}
+        force_orphan: true

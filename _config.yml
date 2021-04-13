@@ -106,13 +106,40 @@ search:
 # Next theme: https://theme-next.js.org/
 theme: next
 
+# markdown-it config: https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: false
+    quotes: '“”‘’'
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: 'header-anchor'
+    permalinkSide: 'left'
+    permalinkSymbol: ''
+    case: 0
+    separator: '-'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-deflist
+    - markdown-it-footnote
+    - markdown-it-latex2img
+    - markdown-it-mark
+    - markdown-it-task-checkbox
+    - name: markdown-it-container
+      options: success
+    - name: markdown-it-container
+      options: info
+    - name: markdown-it-container
+      options: warning
+    - name: markdown-it-container
+      options: danger
+    - name: markdown-it-emoji
+      options:
+        shortcuts: {}
 # Theme config: _config.next.yml
-
-# https://www.npmjs.com/package/hexo-filter-mathjax
-mathjax:
-  tags: ams # or 'ams' or 'all'
-  single_dollars: true # enable single dollar signs as in-line math delimiters
-  cjk_width: 0.9 # relative CJK char width
-  normal_width: 0.6 # relative normal (monospace) width
-  append_css: true # add CSS to pages rendered by MathJax
-  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
