@@ -551,7 +551,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: changyan | disqus | disqusjs | gitalk | livere
+  # Available values: changyan | disqus | disqusjs | gitalk | livere | utterances
   active: disqus
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -564,6 +564,16 @@ comments:
     #  order: -1
     #gitalk:
     #  order: -2
+    
+# Utterances
+# For more information: https://utteranc.es
+utterances:
+  enable: false
+  repo: # Github repository name
+  # Available values: pathname | url | title | og:title
+  issue_term: pathname
+  # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
+  theme: preferred-color-scheme
 
 # Disqus
 disqus:
