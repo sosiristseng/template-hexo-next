@@ -1,9 +1,6 @@
 # https://hub.docker.com/r/tarampampam/node/
 image: tarampampam/node:lts-alpine
 
-variables:
-  PDC_VER: "2.13"
-
 # Cache modules in between jobs: https://docs.gitlab.com/ee/ci/caching/#caching-nodejs-dependencies
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -12,8 +9,7 @@ cache:
 
 before_script:
 - "git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"
-- wget -qO- https://github.com/jgm/pandoc/releases/download/${PDC_VER}/pandoc-${PDC_VER}-linux-amd64.tar.gz | tar xvz --strip-components 1 -C /usr/local/
-- npm ci --cache .npm --prefer-offline
+- npm ci --only=production --cache .npm --prefer-offline
 - npm run build
 
 test:
