@@ -131,15 +131,10 @@ markdown:
     - markdown-it-latex2img
     - markdown-it-mark
     - markdown-it-task-checkbox
-    - name: markdown-it-container
-      options: success
-    - name: markdown-it-container
-      options: info
-    - name: markdown-it-container
-      options: warning
-    - name: markdown-it-container
-      options: danger
+    - markdown-it-kbd
     - name: markdown-it-emoji
       options:
         shortcuts: {}
+
+
 # Theme config: _config.next.yml
