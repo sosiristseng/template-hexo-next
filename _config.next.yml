@@ -187,7 +187,7 @@ links_settings:
   layout: block
 
 links:
-  #Link1: http://yoursite.com
+  "Wen-Wei Tech Blog": https://sosiristseng.github.io
   #Link2: http://yoursite.com
 
 # Table of Contents in the Sidebar
@@ -345,7 +345,7 @@ codeblock:
   # Code Highlight theme
   # See: https://github.com/highlightjs/highlight.js/tree/master/src/styles
   theme:
-    light: default
+    light: tomorrow
     dark: tomorrow-night
   # See: https://github.com/PrismJS/prism/tree/master/themes
   prism:
@@ -384,7 +384,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: true
-  permalink: https://github.com/#
+  permalink: https://github.com/sosiristseng/template-hexo-next
   title: Follow me on GitHub
 
 
@@ -564,7 +564,7 @@ comments:
     #  order: -1
     #gitalk:
     #  order: -2
-    
+
 # Utterances
 # For more information: https://utteranc.es
 utterances:
