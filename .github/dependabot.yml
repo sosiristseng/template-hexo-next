@@ -7,9 +7,13 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
+    labels:
+    - "automerge"
   - package-ecosystem: "github-actions"
     # Look for .github/workflow/*.yml
     directory: "/"
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
+    labels:
+    - "automerge"
