@@ -1,8 +1,9 @@
 # https://hub.docker.com/r/tarampampam/node/
 image: tarampampam/node:lts-alpine
 
+# Full git history
 variables:
-  GIT_STRATEGY: clone
+  GIT_DEPTH: 0
 
 # Cache modules in between jobs: https://docs.gitlab.com/ee/ci/caching/#caching-nodejs-dependencies
 cache:
