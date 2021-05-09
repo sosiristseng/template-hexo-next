@@ -1,6 +1,9 @@
 # https://hub.docker.com/r/tarampampam/node/
 image: tarampampam/node:lts-alpine
 
+variables:
+  GIT_STRATEGY: clone
+
 # Cache modules in between jobs: https://docs.gitlab.com/ee/ci/caching/#caching-nodejs-dependencies
 cache:
   key: ${CI_COMMIT_REF_SLUG}
