@@ -91,7 +91,7 @@ By default, you need to press the refresh button when you make a change to the m
 The `hexo-browsersync` package comes to the rescue. It issues browser refresh automatically upon filesystem changes in your website in `server` mode.
 
 ```bash
-npm i hexo-browsersync
+npm i hexo-browsersync -D
 ```
 
 ### Useful hexo plugins
@@ -134,16 +134,12 @@ markdown:
     quotes: ''
   plugins:
     - markdown-it-abbr
-    - markdown-it-footnote
-    - markdown-it-ins
     - markdown-it-deflist
-    - markdown-it-imsize
+    - markdown-it-footnote
+    - markdown-it-latex2img
     - markdown-it-mark
     - markdown-it-task-checkbox
-    - markdown-it-named-headings
-    - "@iktakahiro/markdown-it-katex"
     - markdown-it-kbd
-    - markdown-it-deflist
     - name: markdown-it-emoji
       options:
         shortcuts: {}
@@ -151,7 +147,7 @@ markdown:
     # Minimum level for ID creation. (Ex. h2 to h6)
     level: 2
     # A suffix that is prepended to the number given if the ID is repeated.
-    collisionSuffix: ''
+    collisionSuffix: 'v'
     # If `true`, creates an anchor tag with a permalink besides the heading.
     permalink: true
     # Class used for the permalink anchor tag.
@@ -161,7 +157,7 @@ markdown:
     # The symbol used to make the permalink
     permalinkSymbol: ""
     # Transform anchor to (1) lower case; (2) upper case
-    case: 0
+    case: 1
     # Replace space with a character
     separator: '-'
 ```
