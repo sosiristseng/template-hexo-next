@@ -6,7 +6,10 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "automergeType": "branch"  
+      "automergeType": "branch"
     }
-  ]
+  ],
+  "git-submodules": {
+    "enabled": true
+  }
 }
