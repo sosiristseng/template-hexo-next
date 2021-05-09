@@ -5,13 +5,15 @@
   "scripts": {
     "build": "hexo g",
     "clean": "hexo cl",
-    "deploy": "hexo cl && hexo g -d",
-    "server": "hexo cl && hexo s -o --debug"
+    "server": "hexo cl && hexo s -o --debug",
+    "gzipper": "gzipper",
+    "compress": "gzipper compress ./public --deflate --brotli"
   },
   "hexo": {
     "version": "5.4.0"
   },
   "dependencies": {
+    "gzipper": "^4.5.0",
     "hexo": "^5.4.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
