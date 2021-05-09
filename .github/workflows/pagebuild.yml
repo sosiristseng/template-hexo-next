@@ -22,10 +22,10 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+    - name: Install Node dependencies
+      run:  npm ci --only=production
     - name: Build website
-      run: |
-        npm ci --only=production
-        npm run build
+      run:  npm run build
     - name: Deploy to GH pages
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3.8.0
