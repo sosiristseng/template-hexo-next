@@ -97,14 +97,18 @@ ignore:
 ## Seach data generator plugin for Hexo
 ## https://github.com/theme-next/hexo-generator-searchdb
 search:
-  path: search.xml
+  path: search.json
   field: all
   content: true
-  format: html
+  format: striptags
 
 # Themes: https://hexo.io/themes/
 # Next theme: https://theme-next.js.org/
 theme: next
+
+# https://github.com/hexojs/hexo-browsersync/issues/15
+server:
+  compress: true
 
 # markdown-it config: https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration
 markdown:
