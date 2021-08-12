@@ -16,3 +16,16 @@ root: /repo-name/  # root:/ for personal website (username.github.io)
 ```
 
 In `_config.next.yml`, change the settings of the Next theme. See also [Next theme settings](https://theme-next.js.org/docs/theme-settings/).
+
+## Livereload
+
+Use the `browse-sync` proxy.
+
+```bash
+npm install -g browser-sync
+```
+
+And the in the project folder
+```bash
+browser-sync start --proxy localhost:4000 --files *
+```
