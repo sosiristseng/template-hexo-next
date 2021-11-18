@@ -9,15 +9,6 @@ This post shows tag plugins, an extension of Markdown syntax, in Hexo static sit
 
 <!-- more -->
 
-The following sections will be
-
-```markdown
-What you write in Markdown
-```
-
-What would be rendered
-
-
 ## Quotes
 
 ### Centered Quote

@@ -5,22 +5,15 @@ tags: ["markdown"]
 categories: ["Hexo"]
 ---
 
-This post showcases the basic Markdown syntax you'll see in major Markdown editors.
+This post showcases the basic Markdown syntax in major Markdown editors.
 
 <!-- more -->
 
 Taken from:
+
 - [Grav](http://learn.getgrav.org/content/markdown)
 - [Hugo LoveIt theme](https://hugoloveit.com/basic-markdown-syntax/)
 - [Pandoc markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
-
-The following sections will be
-
-```markdown
-What you write in Markdown
-```
-
-{What would be rendered}
 
 ## Headings
 
