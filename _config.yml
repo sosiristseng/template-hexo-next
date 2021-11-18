@@ -132,7 +132,7 @@ markdown:
     - markdown-it-abbr
     - markdown-it-deflist
     - markdown-it-footnote
-    - markdown-it-latex2img
+    # - markdown-it-latex2img
     - markdown-it-mark
     - markdown-it-task-checkbox
     - markdown-it-kbd
