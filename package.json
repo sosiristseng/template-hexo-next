@@ -1,34 +1,31 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "hexo g",
-    "clean": "hexo cl",
-    "server": "hexo cl && hexo s -o --debug",
-    "serve": "npm run server",
-    "gzipper": "gzipper",
-    "compress": "gzipper compress ./public --deflate --brotli"
-  },
-  "hexo": {
-    "version": "5.4.0"
-  },
-  "dependencies": {
-    "gzipper": "6.2.1",
-    "hexo": "6.0.0",
-    "hexo-generator-archive": "1.0.0",
-    "hexo-generator-category": "1.0.0",
-    "hexo-generator-index": "2.0.0",
-    "hexo-generator-searchdb": "1.4.0",
-    "hexo-generator-tag": "1.0.0",
-    "hexo-renderer-ejs": "2.0.0",
-    "hexo-renderer-markdown-it": "5.0.0",
-    "hexo-renderer-stylus": "2.0.1",
-    "hexo-server": "2.0.0",
-    "hexo-theme-next": "8.8.2",
-    "hexo-word-counter": "0.0.3",
-    "markdown-it-emoji": "2.0.0",
-    "markdown-it-kbd": "2.2.2",
-    "markdown-it-task-checkbox": "1.0.6"
-  }
+    "name": "hexo-site",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "hexo g",
+        "clean": "hexo cl",
+        "server": "hexo cl && hexo s -o --debug",
+        "serve": "npm run server"
+    },
+    "hexo": {
+        "version": "5.4.0"
+    },
+    "dependencies": {
+        "hexo": "6.0.0",
+        "hexo-generator-archive": "1.0.0",
+        "hexo-generator-category": "1.0.0",
+        "hexo-generator-index": "2.0.0",
+        "hexo-generator-searchdb": "1.4.0",
+        "hexo-generator-tag": "1.0.0",
+        "hexo-renderer-ejs": "2.0.0",
+        "hexo-renderer-markdown-it": "5.0.0",
+        "hexo-renderer-stylus": "2.0.1",
+        "hexo-server": "2.0.0",
+        "hexo-theme-next": "8.8.2",
+        "hexo-word-counter": "0.0.3",
+        "markdown-it-emoji": "2.0.0",
+        "markdown-it-kbd": "2.2.2",
+        "markdown-it-task-checkbox": "1.0.6"
+    }
 }

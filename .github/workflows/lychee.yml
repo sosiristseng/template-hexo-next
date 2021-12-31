@@ -14,7 +14,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.2.0
         with:
-          args: '--accept 200,204,429 --verbose --no-progress **/*.md'
+          args: "--accept 200,204,429 --verbose --no-progress **/*.md"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 

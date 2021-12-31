@@ -10,24 +10,26 @@ variables:
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-  - .npm/
+    - .npm/
 
 before_script:
-- "git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"
-- npm ci --only=production --cache .npm --prefer-offline
-- npm run build
+  - apk add --update --no-cache brotli git
+  - 'git ls-files -z | while read -d '''' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done'
+  - npm ci --only=production --cache .npm --prefer-offline
+  - npm run build
 
 test:
   script:
-  - echo "Building finished."
+    - echo "Building finished."
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
 pages:
   script:
-  - npm run compress
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|svg\|xml\)$' -exec gzip   -f -k {} \; || echo 'Gzip failed. Skipping...'
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|svg\|xml\)$' -exec brotli -f -k {} \; || echo 'Brotli failed. Skipping...'
   artifacts:
     paths:
-    - public
+      - public
   rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
