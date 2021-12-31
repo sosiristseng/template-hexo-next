@@ -3,6 +3,7 @@ image: tarampampam/node:lts-alpine
 
 # Full git history
 variables:
+  GIT_STRATEGY: clone # clone entire repo instead of reusing workspace
   GIT_DEPTH: 0
 
 # Cache modules in between jobs: https://docs.gitlab.com/ee/ci/caching/#caching-nodejs-dependencies
@@ -17,18 +18,16 @@ before_script:
 - npm run build
 
 test:
-  stage: test
   script:
-  - echo "Done"
-  except:
-  - main
+  - echo "Building finished."
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
 
 pages:
-  stage: build
   script:
   - npm run compress
   artifacts:
     paths:
     - public
-  only:
-  - main
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
