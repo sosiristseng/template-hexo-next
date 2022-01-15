@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://sosiris-templates.github.io/hexo-next/
-root: /hexo-next/
+url: https://sosiristseng.github.io
+root: /template-hexo-next/
 permalink: :category/:title/
 permalink_defaults:
 pretty_urls:
@@ -139,6 +139,5 @@ markdown:
     - name: markdown-it-emoji
       options:
         shortcuts: {}
-
 
 # Theme config: _config.next.yml
