@@ -1,6 +1,6 @@
 version: 2
 updates:
-  # Python
+  # NodeJS
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
