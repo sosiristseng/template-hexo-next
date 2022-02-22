@@ -22,7 +22,7 @@ This template includes these features:
 
 - [Hexo](https://hexo.io/) static site generator.
 - Fast and elegant [Next theme](https://theme-next.js.org/).
-- [markdown-it renderer](https://github.com/wzpan/hexo-renderer-markdown-it) and KaTeX math.
+- [markdown-it renderer](https://github.com/hexojs/hexo-renderer-markdown-it) and KaTeX math.
 - GitHub actions and GitLab CI included.
 
 
@@ -177,7 +177,7 @@ Also see [GitHub action for GitHub pages](https://github.com/peaceiris/actions-g
 name: github pages
 env:
   NODE_ENV: production
-  PDC_VER: "2.11.3.1"
+  PDC_VER: "2.17.1.1"
 
 on:
   push:
