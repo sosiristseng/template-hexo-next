@@ -1,4 +1,4 @@
-name: Check markdown links
+name: Check markdown links by Lychee
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
   # - cron: "0 0 * * 1"  # Every Monday
 
 jobs:
-  linkChecker:
+  lychee:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
