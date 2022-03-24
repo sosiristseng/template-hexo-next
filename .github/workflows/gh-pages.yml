@@ -7,8 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: pages
+  pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
