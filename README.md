@@ -15,6 +15,12 @@ url: https://username.github.io
 root: /repo-name/  # root:/ for personal website (username.github.io)
 ```
 
+### Notes On GitHub
+
+Open your repository settings => Pages => GitHub Pages
+=> Build and deployment => Source, Select `GitHub actions`
+
+
 In `_config.next.yml`, change the settings of the Next theme. See also [Next theme settings](https://theme-next.js.org/docs/theme-settings/).
 
 ## Livereload
