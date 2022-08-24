@@ -1,35 +1,3 @@
-# https://hub.docker.com/r/tarampampam/node/
-image: tarampampam/node:lts-alpine
-
-# Full git history
-variables:
-  GIT_STRATEGY: clone # clone entire repo instead of reusing workspace
-  GIT_DEPTH: 0
-
-# Cache modules in between jobs: https://docs.gitlab.com/ee/ci/caching/#caching-nodejs-dependencies
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - .npm/
-
-before_script:
-  - apk add --update --no-cache brotli git
-  - 'git ls-files -z | while read -d '''' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done'
-  - npm ci --only=production --cache .npm --prefer-offline
-  - npm run build
-
-test:
-  script:
-    - echo "Building finished."
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-
-pages:
-  script:
-    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|svg\|xml\)$' -exec gzip   -f -k {} \; || echo 'Gzip failed. Skipping...'
-    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\|svg\|xml\)$' -exec brotli -f -k {} \; || echo 'Brotli failed. Skipping...'
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
+include:
+  - project: 'sosiristseng/gitlab-examples'
+    file: '/hexo.gitlab-ci.yml'
