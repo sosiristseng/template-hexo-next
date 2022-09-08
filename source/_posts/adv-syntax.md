@@ -110,14 +110,8 @@ The directory containing code is defined at `code_dir` option in `_config.yml`, 
 [Include Posts @ Hexo](https://hexo.io/docs/tag-plugins#Include-Posts)
 
 ```markdown
-
 {% post_link filename [title] [escape]  %}
-
-
-{% post_link emoji "Emoji support" %}
 ```
-
-{% post_link ssg/emoji "Emoji support" %}
 
 ## Image
 
