@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - name: Install Node dependencies
-        run: npm ci --only=production
+        run: npm ci --omit=dev
       - name: Build website
         run: npm run build
       - name: Upload artifact
