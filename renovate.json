@@ -9,5 +9,6 @@
         "automerge": true
       }
   ],
+  "lockFileMaintenance": { "enabled": true },
   "platformAutomerge": true
 }
