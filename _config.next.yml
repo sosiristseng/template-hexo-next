@@ -341,12 +341,17 @@ android_chrome_color: "#222"
 # Custom Logo (Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.jpg
 
+highlight:
+  enable: true
+prismjs:
+  enable: false
+
 codeblock:
   # Code Highlight theme
   # See: https://github.com/highlightjs/highlight.js/tree/master/src/styles
   theme:
-    light: tomorrow
-    dark: tomorrow-night
+    light: atom-one-light
+    dark: atom-one-dark
   # See: https://github.com/PrismJS/prism/tree/master/themes
   prism:
     light: prism
