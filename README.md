@@ -2,7 +2,7 @@
 
 - [Hexo](https://hexo.io/zh-tw/) static site generator.
 - Fast and elegant [Next theme](https://theme-next.js.org/).
-- GitHub actions and GitLab CI enabled to build the websites to [GitHub pages](https://pages.github.com/) and [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/).
+- GitHub actions building the website to [GitHub pages](https://pages.github.com/)
 
 ## Copy over my template site
 
