@@ -38,23 +38,16 @@ cd template-hexo-next
 npm install
 ```
 
-3. Install `browse-sync` for livereload in the browser.
+3. Install `live-server` and `hexo-cli` for live reload in the browser. From [this SO thread](https://stackoverflow.com/questions/36898508/how-to-use-hexo-server-draft-and-livereload/54872963#54872963).
 
 ```bash
-npm install -g browser-sync
+npm install -g live-server hexo-cli
 ```
 
-4. Run Hexo server
+4. Run
 
 ```bash
-npm run server
+hexo generate --draft --watch & live-server --port=4000 public
 ```
 
-5. Open another terminal window and run `browse-sync`
-
-```bash
-browser-sync start --proxy localhost:4000 --files *
-```
-
-6. Checkout the `browse-sync` port `localhost:3000` (not hexo server port `localhost:4000`) in the browser and the contents should reload with filesystem changes.
 
