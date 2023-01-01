@@ -6,8 +6,7 @@
 
 ## Copy over my template site
 
-- Hosting GitHub: click `use as template`
-- Hosting on others e.g. GitLab: clone / import this repo
+Hosting GitHub: click `use as template`
 
 In `_config.yml`, Change `baseurl` and your personal settings. See also [Hexo configuration](https://hexo.io/docs/configuration.html).
 ```yml _config.yml
@@ -15,39 +14,40 @@ url: https://username.github.io
 root: /repo-name/  # root:/ for personal website (username.github.io)
 ```
 
-### Notes On GitHub
+### To enable GitHub pages
 
 Open your repository settings => Pages => GitHub Pages
 => Build and deployment => Source, Select `GitHub actions`
 
+### Customizations
 
-In `_config.next.yml`, change the settings of the Next theme. See also [Next theme settings](https://theme-next.js.org/docs/theme-settings/).
+You can customize the theme settings by editing `_config.next.yml`. See also [Next theme settings](https://theme-next.js.org/docs/theme-settings/).
 
-## How to develop
+## How to develop (in VS Code)
 
-1. Clone the repo (using SSH in this case)
+Clone this repository
 
 ```bash
-git clone git@github.com:sosiristseng/template-hexo-next.git
-cd template-hexo-next
+git clone git@github.com:sosiristseng/sosiristseng.github.io.git
+cd sosiristseng.github.io
 ```
 
-1. Install npm dpendencies. Node package manager (npm) is needed.
-
+Install npm dpendencies with Node package manager (npm).
 ```bash
 npm install
 ```
 
-3. Install `live-server` and `hexo-cli` for live reload in the browser. From [this SO thread](https://stackoverflow.com/questions/36898508/how-to-use-hexo-server-draft-and-livereload/54872963#54872963).
-
-```bash
-npm install -g live-server hexo-cli
+Install [live server VS code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) and set the root folder to `public` in `.vscode/settings.json`
+```json
+{
+    "liveServer.settings.root": "/public"
+}
 ```
 
-4. Run
-
+Build the website locally and watch for file changes
 ```bash
-hexo generate --draft --watch & live-server --port=4000 public
+hexo generate --draft --watch
 ```
 
+Open Live Server with VSCode command palette (Shift + Command + P (Mac) / Ctrl + Shift + P (Windows/Linux)) and enjoy :)
 
