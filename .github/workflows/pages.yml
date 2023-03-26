@@ -2,25 +2,30 @@ name: github pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Restore last modified time
         run: 'git ls-files -z | while read -d '''' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done'
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           cache: 'npm'
           cache-dependency-path: package-lock.json
-      - name: Install Node dependencies
+      - name: Install Node.js dependencies
         run: npm ci --omit=dev
       - name: Build website
         run: npm run build
@@ -32,7 +37,7 @@ jobs:
   # Deployment job
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: ${{ github.ref == 'refs/heads/main'}}
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write # to deploy to Pages
