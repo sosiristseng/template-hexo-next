@@ -9,13 +9,13 @@ description: Site description
 keywords:
 author: Your name
 language: en
-timezone: ''
+timezone: 'Asia/Taipei'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://sosiristseng.github.io
 root: /template-hexo-next/
-permalink: :category/:title/
+permalink: :year-:month-:day-:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
@@ -46,14 +46,15 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: '    '
   wrap: true
   hljs: false
 
-# Pandoc config (optional): https://github.com/wzpan/hexo-renderer-pandoc
+prismjs:
+  enable: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -61,7 +62,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 15
   order_by: -date
 
 # Category & Tag

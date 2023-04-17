@@ -354,8 +354,8 @@ codeblock:
     dark: atom-one-dark
   # See: https://github.com/PrismJS/prism/tree/master/themes
   prism:
-    light: prism
-    dark: prism-dark
+    light: prism-coy
+    dark: prism-tomorrow
   # Add copy button on codeblock
   copy_button:
     enable: true
@@ -391,7 +391,6 @@ github_banner:
   enable: true
   permalink: https://github.com/sosiristseng/template-hexo-next
   title: Follow me on GitHub
-
 
 # ---------------------------------------------------------------
 # Font Settings
