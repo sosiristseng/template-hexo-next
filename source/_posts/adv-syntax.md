@@ -408,31 +408,9 @@ Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}
 {% btn #, Text & Icon (fixed width), home fa-fw %}</p>
 
 
-## Link Grid
-
-[link-grid @ Next](https://theme-next.js.org/docs/tag-plugins/link-grid.html)
-
-```markdown
-{% linkgrid %}
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-{% endlinkgrid %}
-```
-
-{% linkgrid %}
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | https://hexo.bootcss.com/logo.png
-{% endlinkgrid %}
-
-
 ## Others
 
+- [link-grid](https://theme-next.js.org/docs/tag-plugins/link-grid.html)
 - [iframes](https://hexo.io/zh-tw/docs/tag-plugins.html#iframe)
 - [Group Pictures](https://theme-next.js.org/docs/tag-plugins/group-pictures.html)
 - [Caniuse](https://theme-next.js.org/docs/tag-plugins/caniuse.html)
