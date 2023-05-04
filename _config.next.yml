@@ -341,20 +341,13 @@ android_chrome_color: "#222"
 # Custom Logo (Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.jpg
 
-highlight:
-  enable: true
-prismjs:
-  enable: false
-
 codeblock:
-  # Code Highlight theme
-  # See: https://github.com/highlightjs/highlight.js/tree/master/src/styles
+  # Code Highlight theme: https://theme-next.js.org/highlight/
   theme:
     light: atom-one-light
     dark: atom-one-dark
-  # See: https://github.com/PrismJS/prism/tree/master/themes
   prism:
-    light: prism-coy
+    light: prism
     dark: prism-tomorrow
   # Add copy button on codeblock
   copy_button:
