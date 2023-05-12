@@ -13,5 +13,6 @@
     "enabled": true,
     "automerge": true
   },
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "automergeStrategy": "squash"
 }
