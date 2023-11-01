@@ -7,6 +7,8 @@ categories: ["Hexo"]
 
 This post shows tag plugins, an extension of Markdown syntax, in Hexo static site generator and the Next theme [documentation](https://theme-next.js.org)
 
+Some of the built-in tags have been dropped (gist, youtube, jsfiddle, and vimeo). If you use those tags in your existing blog posts, you can install `hexo-tag-embed` to continue using them with Hexo v7.0.0.
+
 <!-- more -->
 
 ## Quotes
@@ -77,16 +79,6 @@ _.compact([0, 1, false, 2, '', 3]);
 => [1, 2, 3]
 {% endcodeblock %}
 
-### Github gist
-
-[Gist @ Hexo](https://hexo.io/docs/tag-plugins.html#Gist)
-
-```markdown
-{% gist stefanopalmieri/cdd42d4bd9c806c644de7e7ca86e59b0 %}
-```
-
-{% gist stefanopalmieri/cdd42d4bd9c806c644de7e7ca86e59b0 %}
-
 ### Include code
 
 [Include Code @ Hexo](https://hexo.io/docs/tag-plugins.html#Include-Code)
@@ -137,26 +129,6 @@ The directory containing code is defined at `code_dir` option in `_config.yml`, 
 ```
 
 {% video https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Physicsworks.ogv/Physicsworks.ogv.240p.vp9.webm %}
-
-### YouTube videos
-
-[YouTube @ Hexo](https://hexo.io/docs/tag-plugins.html#YouTube)
-
-```markdown
-{% youtube JtUAAXe_0VI %}
-```
-
-{% youtube JtUAAXe_0VI %}
-
-### Vimeo
-
-[Vimeo @ Hexo](https://hexo.io/docs/tag-plugins.html#Vimeo)
-
-```markdown
-{% vimeo 253989945 %}
-```
-
-{% vimeo 253989945 %}
 
 ## PDF files
 
