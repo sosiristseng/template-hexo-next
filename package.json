@@ -24,7 +24,7 @@
     "hexo-server": "3.0.0",
     "hexo-theme-next": "8.19.1",
     "hexo-word-counter": "0.1.0",
-    "markdown-it-emoji": "2.0.2",
+    "markdown-it-emoji": "3.0.0",
     "markdown-it-kbd": "2.2.2",
     "markdown-it-task-checkbox": "1.0.6"
   }
