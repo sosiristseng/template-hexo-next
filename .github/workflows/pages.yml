@@ -19,14 +19,10 @@ jobs:
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Restore last modified time
         run: 'git ls-files -z | while read -d '''' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done'
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-          cache-dependency-path: package-lock.json
-      - name: Install Node.js dependencies
-        run: npm ci --omit=dev
+      - name: Setup NodeJS and environments
+        uses: bahmutov/npm-install@v1
+        env:
+          NODE_ENV: production
       - name: Build website
         run: npm run build
       - name: Upload page artifact
