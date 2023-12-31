@@ -10,7 +10,7 @@ on:
     paths:
       - 'docs/**'
       - '.lycheeignore'
-      - '.github/workflows/linkcheck.yml'
+      - '.github/workflows/lychee.yml'
   pull_request:
     branches:
       - main
