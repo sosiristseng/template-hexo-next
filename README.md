@@ -23,7 +23,7 @@ Open your repository settings => Pages => GitHub Pages
 
 You can customize the theme settings by editing `_config.next.yml`. See also [Next theme settings](https://theme-next.js.org/docs/theme-settings/).
 
-## How to develop (in VS Code)
+## How to develop (in VSCode)
 
 Clone this repository
 
@@ -33,21 +33,18 @@ cd sosiristseng.github.io
 ```
 
 Install npm dpendencies with Node package manager (npm).
+
 ```bash
 npm install
 ```
 
-Install [live server VS code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) and set the root folder to `public` in `.vscode/settings.json`
-```json
-{
-    "liveServer.settings.root": "/public"
-}
-```
+Install [live server VS code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+
 
 Build the website locally and watch for file changes
+
 ```bash
-hexo generate --draft --watch
+npm run gwatch
 ```
 
 Open Live Server with VSCode command palette (Shift + Command + P (Mac) / Ctrl + Shift + P (Windows/Linux)) and enjoy :)
-
