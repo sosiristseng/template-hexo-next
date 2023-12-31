@@ -6,7 +6,7 @@ categories: ["Test"]
 sticky: 100
 ---
 
-The stuff you'll see in the front page.
+The content you will see in the front page.
 
 <!-- more -->
 

@@ -38,13 +38,25 @@ Install npm dpendencies with Node package manager (npm).
 npm install
 ```
 
-Install [live server VS code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+Install the [Live Server VSCode extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).  The settings file `.vscode/settings.json` already points the website root to the `public` folder.
 
+If you are using a subdirectory for your site (e.g., This project resides in https://sosiristseng.github.io/template-hexo-next, so `template-hexo-next` is the subdirectory, corresponding to the `root` entry in `_config.yml`), you may need the mount option for the website to work properly.
 
-Build the website locally and watch for file changes
+The option in `.vscode/settings.json` is:
+
+```json
+{
+    "liveServer.settings.mount": [
+      ["/public", "/template-hexo-next"]
+    ],
+}
+
+```
+
+Build the website locally and Hexo will watch for file changes
 
 ```bash
 npm run gwatch
 ```
 
-Open Live Server with VSCode command palette (Shift + Command + P (Mac) / Ctrl + Shift + P (Windows/Linux)) and enjoy :)
+Open Live Server by VSCode command palette (Shift + Command + P (Mac) / Ctrl + Shift + P (Windows/Linux)) and see the built website.
