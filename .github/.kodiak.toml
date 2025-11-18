@@ -1,9 +1,12 @@
 # .kodiak.toml
-version      = 1
+version = 1
 
 [merge]
- method = "squash"
+  method                               = "squash"
+  block_on_neutral_required_check_runs = true
+  [merge.message]
+    title = "pull_request_title"
+    body  = "pull_request_body"
 
-[merge.message]
-title = "pull_request_title"
-body = "pull_request_body"
+[update]
+  ignored_usernames = ["dependabot", "renovate"]
