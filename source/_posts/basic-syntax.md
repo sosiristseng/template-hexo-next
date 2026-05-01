@@ -326,7 +326,7 @@ This is a footnote with "label"[^label]
 
 ## Keyboard strokes
 
-Needs [markdown-it-kbd](https://www.npmjs.com/package/markdown-it-kbd).
+Needs `markdown-it-kbd`.
 
 ```markdown
 [[Ctrl]] + [[Alt]] + [[Delete]]
